@@ -17,6 +17,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
       node: {
         extensions: ['.ts', '.tsx'],
@@ -35,7 +38,13 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   rules: {
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'react/jsx-pascal-case': 'warn',
+    'react/jsx-key': 'warn',
+    'react/self-closing-comp': 'warn',
     'react/react-in-jsx-scope': 'off',
+    'react/destructuring-assignment': 'warn',
+    'react/jsx-curly-brace-presence': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     'react/jsx-filename-extension': [
       1,
