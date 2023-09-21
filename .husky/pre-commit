@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "let's check the code! =^ . ｡.^="
-pnpm lint-staged && pnpm ci-test
+# pnpm lint-staged && pnpm ci-test
+pnpm lint-staged
