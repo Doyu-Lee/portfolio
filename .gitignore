@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scss
+# 마지막에 gitignore에서 삭제 
+*.css
