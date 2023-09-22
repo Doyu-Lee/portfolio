@@ -36,6 +36,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:sonarjs/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
   ],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -73,5 +74,41 @@ module.exports = {
     ],
     'no-nested-ternary': 'off',
     'import/prefer-default-export': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'type',
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'unknown',
+        ],
+        pathGroups: [
+          {
+            pattern: 'react*',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@hooks/*',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@components/*',
+            group: 'internal',
+            position: 'after',
+          },
+        ],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
 };

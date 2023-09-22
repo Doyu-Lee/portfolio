@@ -109,6 +109,9 @@ devDependencies:
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
+  recommended:
+    specifier: link:plugin:import/recommended
+    version: link:plugin:import/recommended
   stylelint:
     specifier: ^15.10.3
     version: 15.10.3(typescript@5.2.2)
