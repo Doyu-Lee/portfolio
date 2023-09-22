@@ -3,8 +3,7 @@ const path = require('path');
 
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@import "_variables", "_mixins";`,
+    includePaths: [path.join(__dirname, 'style')],
   },
 };
 
