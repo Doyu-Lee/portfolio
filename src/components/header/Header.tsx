@@ -1,10 +1,9 @@
 import Link from 'next/link';
+import { navMenus } from '@/constants/navMenus';
 import Logo from '../common/logo/Logo';
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const navMenus = ['roadmap', 'dots'];
-
   return (
     <header className={styles['header-nav']}>
       <div className={styles['nav-box']}>
