@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import styles from './Logo.module.scss';
 
-const Logo = () => {
+const Logo = ({ lng }: { lng: string }) => {
   const root = useRef(null);
 
   useLayoutEffect(() => {
@@ -17,7 +17,12 @@ const Logo = () => {
   }, []);
 
   return (
-    <Link className={styles['header-logo']} ref={root} data-text="홈 로고" href="/">
+    <Link
+      className={styles['header-logo']}
+      ref={root}
+      data-text="홈 로고"
+      href={`/${lng}`}
+    >
       <span className="box">D</span>O<span className={styles.point}>Y</span>U
     </Link>
   );
