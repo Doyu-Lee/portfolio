@@ -1,4 +1,11 @@
 @import 'reset.module';
+@font-face {
+  font-family: 'ChosunGu';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff')
+    format('woff');
+}
 
 :root {
   /* font-size */
@@ -13,6 +20,7 @@
 
   /* color */
   --color-primary: darkcyan;
+  --color-light-primary: rgb(117, 173, 173);
   --color-point-light-green: #b7eae5ad;
   --color-point-skyblue: #bfe2f2ad;
 
@@ -39,6 +47,10 @@
   /* border-radius */
   --rounded-default: 0.625rem;
   --rounded-full: 999rem;
+
+  /* korean font */
+  --font-ko-header: 'ChosunGu';
+
 }
 
 * {
