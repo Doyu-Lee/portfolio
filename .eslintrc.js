@@ -50,13 +50,14 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/destructuring-assignment': 'warn',
     'react/jsx-curly-brace-presence': 'warn',
-    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-explicit-any': 'warn',
     'react/jsx-filename-extension': [
       1,
       {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
     ],
+    'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': [
       'error',
@@ -78,6 +79,7 @@ module.exports = {
     ],
     'no-nested-ternary': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'import/order': [
       'error',
       {
@@ -98,12 +100,17 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@hooks/*',
+            pattern: '@/hooks/*',
             group: 'internal',
             position: 'after',
           },
           {
-            pattern: '@components/*',
+            pattern: '@/components/*',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@/utils/*',
             group: 'internal',
             position: 'after',
           },
