@@ -30,6 +30,12 @@
     height: 100%;
     padding: 0 10px;
     border-bottom: 1px solid var(--color-gray09);
+
+    .align {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
@@ -57,7 +63,7 @@
       height: 10px;
       transform: rotate(-2deg);
       transition: 0.4s all;
-      background: var(--color-point-skyblue);
+      background: var(--color-point-light-green);
     }
   }
 }
