@@ -27,15 +27,16 @@ export const lobster = Lobster({
   variable: '--font-inter',
 });
 
-export const permanentMarker = Permanent_Marker({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-permanentMarker',
-});
-
-// style
 export const IBMPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-IBMPlexMono',
+});
+
+// style
+
+export const permanentMarker = Permanent_Marker({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-permanentMarker',
 });

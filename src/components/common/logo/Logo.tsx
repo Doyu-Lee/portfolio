@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import styles from './Logo.module.scss';
 
-const Logo = () => {
+const Logo = ({ lng }: { lng: string }) => {
   const root = useRef(null);
 
   useLayoutEffect(() => {
@@ -14,11 +14,25 @@ const Logo = () => {
     tl.to('.box', { duration: 0.5, rotate: -40 });
     tl.to('.box', { duration: 0.7, rotate: 20 });
     tl.to('.box', { duration: 1, rotate: 10 });
+
+    const animationInterval = setInterval(() => {
+      tl.restart();
+    }, 5000);
+
+    return () => {
+      clearInterval(animationInterval);
+    };
   }, []);
 
   return (
-    <Link className={styles['header-logo']} ref={root} data-text="홈 로고" href="/">
-      <span className="box">D</span>O<span className={styles.point}>Y</span>U
+    <Link
+      className={styles['header-logo']}
+      ref={root}
+      data-text="홈 로고"
+      href={`/${lng}`}
+    >
+      <div className={`box ${styles.word}`}>D</div>O
+      <span className={styles.point}>Y</span>U
     </Link>
   );
 };

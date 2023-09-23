@@ -30,23 +30,25 @@
     height: 100%;
     padding: 0 10px;
     border-bottom: 1px solid var(--color-gray09);
+    font-family: var(--font-IBMPlexMono);
 
     .align {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 }
 
 .menu-box {
+  margin-right: 5rem;
+  font-size: var(--text-l);
+
   .menu {
     display: inline-block;
     position: relative;
     margin: 0 20px;
     transition: all 0.2s ease-in-out;
-    font-family: var(--font-IBMPlexMono);
-    font-size: var(--text-l);
 
     &:hover .highlight:after {
       width: 100%;
@@ -66,4 +68,8 @@
       background: var(--color-point-light-green);
     }
   }
+}
+
+.ko {
+  font-family: var(--font-ko-header);
 }

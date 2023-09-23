@@ -10,9 +10,9 @@ jest.mock(
 );
 
 it('NextLink 테스트', async () => {
-  await render(<Header />, {
+  await render(<Header lng="en" />, {
     wrapper: MemoryRouterProvider,
   });
   fireEvent.click(screen.getByText('dots'));
-  expect(mockRouter.asPath).toEqual('/dots');
+  expect(mockRouter.asPath).toEqual('/en/dots');
 });
