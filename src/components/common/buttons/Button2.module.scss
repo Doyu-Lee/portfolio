@@ -1,53 +1,27 @@
 .button-box {
-  width: 130px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 130px;
+  height: 100%;
 }
 
 .button {
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: var(--color-gray4);
-  border: 1.5px solid var(--color-primary);
+  display: flex;
+  justify-content: center;
   width: 50px;
   height: 30px;
+  padding-top: 2px;
   transition: all 0.3s ease-in-out;
+  border: 1.5px solid var(--color-light-primary);
   border-radius: 17px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #444444;
-    transition: all linear 0.5s;
-  }
-  &:hover:before {
-    width: 420px;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #444444;
-    transition: all linear 0.5s;
-  }
-  .jb:hover:after {
-    width: 420px;
-  }
-
+  color: var(--color-gray4);
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
 
   &:hover {
-    font-weight: 700;
     color: var(--color-primary);
+    font-weight: 700;
   }
 }
