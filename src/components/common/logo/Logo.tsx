@@ -14,6 +14,14 @@ const Logo = ({ lng }: { lng: string }) => {
     tl.to('.box', { duration: 0.5, rotate: -40 });
     tl.to('.box', { duration: 0.7, rotate: 20 });
     tl.to('.box', { duration: 1, rotate: 10 });
+
+    const animationInterval = setInterval(() => {
+      tl.restart();
+    }, 5000);
+
+    return () => {
+      clearInterval(animationInterval);
+    };
   }, []);
 
   return (
@@ -23,7 +31,8 @@ const Logo = ({ lng }: { lng: string }) => {
       data-text="홈 로고"
       href={`/${lng}`}
     >
-      <span className="box">D</span>O<span className={styles.point}>Y</span>U
+      <div className={`box ${styles.word}`}>D</div>O
+      <span className={styles.point}>Y</span>U
     </Link>
   );
 };
