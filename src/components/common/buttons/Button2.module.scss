@@ -1,0 +1,53 @@
+.button-box {
+  width: 130px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--color-gray4);
+  border: 1.5px solid var(--color-primary);
+  width: 50px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 17px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #444444;
+    transition: all linear 0.5s;
+  }
+  &:hover:before {
+    width: 420px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #444444;
+    transition: all linear 0.5s;
+  }
+  .jb:hover:after {
+    width: 420px;
+  }
+
+
+  &:hover {
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+}
