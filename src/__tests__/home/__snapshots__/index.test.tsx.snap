@@ -4,6 +4,10 @@ exports[`Home snapshot 테스트입니다. 1`] = `
 <div>
   <main
     class="main"
-  />
+  >
+    <h2>
+      Home Page
+    </h2>
+  </main>
 </div>
 `;

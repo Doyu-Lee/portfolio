@@ -1,0 +1,19 @@
+.header-logo {
+  position: relative;
+  padding: 0 4px 0 30px;
+  color: var(--color-gray01);
+  font-family: var(--font-megrim);
+  font-size: var(--logo-laptop);
+
+  &:hover {
+    color: var(--color-primary);
+    text-shadow:
+      0 0 3px rgba(195, 255, 237, 0.3),
+      0 0 7px rgba(195, 255, 237, 0.2),
+      0 0 12px rgba(195, 255, 237, 0.1);
+  }
+
+  > .point {
+    color: var(--color-primary);
+  }
+}

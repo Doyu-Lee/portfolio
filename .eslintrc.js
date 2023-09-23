@@ -39,6 +39,10 @@ module.exports = {
     'plugin:import/recommended',
   ],
   rules: {
+    'react/function-component-definition': [
+      2,
+      { namedComponents: ['arrow-function', 'function-declaration'] },
+    ],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'react/jsx-pascal-case': 'warn',
     'react/jsx-key': 'warn',

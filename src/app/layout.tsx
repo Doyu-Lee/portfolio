@@ -1,8 +1,13 @@
-import '@/styles/globals.scss';
+import '@/styles/base/globals.scss';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import Header from '@/components/header/Header';
+import {
+  IBMPlexMono,
+  lobster,
+  mansalva,
+  megrim,
+  permanentMarker,
+} from '../../public/fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -11,8 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="ko"
+      className={`
+      ${mansalva.variable} 
+      ${megrim.variable} 
+      ${lobster.variable} 
+      ${permanentMarker.variable} 
+      ${IBMPlexMono.variable}`}
+    >
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
