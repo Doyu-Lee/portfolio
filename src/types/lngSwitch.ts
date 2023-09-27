@@ -6,3 +6,7 @@ export interface LngSwitch {
 export interface LngParamsProps {
   params: { lng: string };
 }
+
+export interface LngProps {
+  lng: string;
+}
