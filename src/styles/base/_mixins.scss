@@ -1,3 +1,63 @@
-@mixin font {
-  font-size: 1rem;
+// @include
+// @include center-center(row);
+// @include flex(center, center);
+// @include tilt;
+// @include long-shadow-text(500, 0, #7e9d9b);
+
+@mixin center-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin tilt {
+  @keyframes tilt {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(-30px, 50px);
+    }
+    35% {
+      transform: rotate(7deg);
+    }
+    55% {
+      transform: rotate(-1deg);
+    }
+    70% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  animation: tilt 2s ease-in-out infinite;
+}
+
+@mixin long-shadow-text($distance, $blur, $color) {
+  $shadows: null;
+  $color: darken($color, 10);
+  $blur: #{$blur}px;
+  @for$i from 0 through $distance {
+    $dist: $i + px;
+    $shadows: append($shadows, ($dist $dist $blur $color), comma);
+  }
+  text-shadow: $shadows;
+}
+
+@mixin titleAgain($lan) {
+    @if $lan == 'ko' {
+            padding-bottom: 13px;
+            font-family: var(--font-ko-somi);
+            font-size: 3.7rem;
+  } @else {
+            font-family: var(--font-permanentMarker);
+            font-size: 3rem;
+            font-weight: 600;
+  }
 }

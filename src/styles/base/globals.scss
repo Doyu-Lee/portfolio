@@ -39,6 +39,9 @@
   /* color */
   --color-primary: darkcyan;
   --color-light-primary: rgb(117, 173, 173);
+  
+  --color-point-dark-green1: #5b8683;
+  --color-point-dark-green2: #7e9d9b;
   --color-point-light-green: #b7eae5ad;
   --color-point-skyblue: #bfe2f2ad;
 
@@ -55,6 +58,7 @@
   --color-gray10: #d6d6d6;
   --color-gray11: #e6e6e6;
   --color-gray12: #f6f6f6;
+  --color-gray13: #f8f8f8;
   --color-white: #fff;
 
   --color-bg: #f5f5f5e5;
@@ -63,7 +67,8 @@
   --shadow-default: 0 1px 10px rgba(170, 170, 170, 25);
 
   /* border-radius */
-  --rounded-default: 0.625rem;
+  --less-rounded: 0.8rem;
+  --rounded-default: 1rem;
   --rounded-full: 999rem;
 
   /* korean font */
