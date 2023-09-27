@@ -1,6 +1,7 @@
 .header-nav {
   display: flex;
   position: fixed;
+  z-index: 500;
   top: 0;
   left: 0;
   align-items: center;
@@ -47,7 +48,7 @@
   .menu {
     display: inline-block;
     position: relative;
-    margin: 0 20px;
+    margin-right: 35px;
     transition: all 0.2s ease-in-out;
 
     &:hover .highlight:after {

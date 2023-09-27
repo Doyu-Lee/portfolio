@@ -9,7 +9,7 @@ import {
   mansalva,
   megrim,
   permanentMarker,
-} from '../../../public/fonts';
+} from '../../../public/fonts/fonts';
 import { languages } from '../i18n/settings';
 
 export async function generateStaticParams() {

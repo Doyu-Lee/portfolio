@@ -1,1 +1,1 @@
-export const navMenus = ['roadmap', 'dots'];
+export const navMenus = ['dots', 'contacts'];
