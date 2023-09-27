@@ -6,10 +6,10 @@ import styles from './TypingAni.module.scss';
 
 export default function TypingAni({ lng }: LngProps) {
   const { t } = useTranslation(lng, 'contacts');
-  const isMounting = useAfterSeconds(1000);
+  const { isMounting } = useAfterSeconds(2000);
 
   const [text] = useTypewriter({
-    words: ['', t('subTitle1'), t('subTitle2'), t('subTitle3')],
+    words: ['--', t('subTitle1'), t('subTitle2'), t('subTitle3')],
   });
 
   return (
