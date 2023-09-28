@@ -1,23 +1,23 @@
+@import 'mixins';
+
 .button-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include center-center();
   width: 130px;
   height: 100%;
 }
 
 .button {
-  display: flex;
-  justify-content: center;
+  @include center-center();
   width: 50px;
   height: 30px;
   padding-top: 2px;
   transition: all 0.3s ease-in-out;
   border: 1.5px solid var(--color-light-primary);
   border-radius: 17px;
+  border-radius: var(--rounded-default);
   color: var(--color-gray4);
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   text-align: center;
 
   &:hover {
@@ -25,3 +25,4 @@
     font-weight: 700;
   }
 }
+

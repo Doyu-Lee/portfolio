@@ -1,8 +1,9 @@
 .button-box {
   position: fixed;
-  top: 2%;
-  right: 7%;
+  z-index: 501;
+  top: 0%;
+  right: 6%;
   width: 100px;
-  height: 50px;
-  font-family: var(--font-lobster)
+  height: 81px;
+  font-family: var(--font-balooBhaina);
 }

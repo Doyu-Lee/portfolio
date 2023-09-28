@@ -1,0 +1,83 @@
+@import 'mixins';
+
+.container {
+  display: flex;
+  width: 90%;
+  padding: 1rem 0;
+
+  .article-box, .mail-box {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    width: 290px;
+    height: 90px;
+    overflow: hidden;
+    transition: all .3s;
+    border-radius: var(--less-rounded);
+    background-color: var(--color-gray11);
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover > .title, .mail-title {
+      @include long-shadow-text(500, 0, #7e9d9b);
+    }
+
+    .title, .mail-title {
+      align-self: center;
+      margin: 2rem 0;
+      color: var(--color-gray13);
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 3em;
+      @include long-shadow-text(500, 0, #ababab);
+    }
+
+    .mail-title {
+      transition: all .3s;
+    }
+  }
+}
+
+.article-box:hover {
+  background-color: #cfe1dd;
+}
+
+.mail-box {
+
+  &:hover {
+    background-color: var(--color-point-dark-green1);
+  }
+  
+  &:hover > .mail-title {
+    transform: translate(-90px, -90px);
+    opacity: 0;
+     }
+
+  &:hover > .subtitle-box {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    color: var(--color-white);
+  }
+
+  .subtitle-box{
+    position: absolute;
+    @include center-center();
+    width: 100%;
+    height: 100%;
+    transform: translate(180px, 180px);
+    transition: all .5s;
+    opacity: 0;
+  
+    .subtitle {
+      font-family: var(--font-solway);
+      font-size: 1.22rem;
+      text-transform: lowercase;
+    }
+  }
+}
+
+
+
+

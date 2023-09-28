@@ -10,8 +10,8 @@ const isBrowser = typeof window !== 'undefined';
 module.exports = {
   // debug: true,
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'de', 'it'],
+    defaultLocale: 'ko',
+    locales: ['en'],
   },
   backend: {
     backendOptions: [

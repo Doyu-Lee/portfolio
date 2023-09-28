@@ -1,38 +1,28 @@
 'use client';
 
-import gsap from 'gsap';
 import Link from 'next/link';
-import { useLayoutEffect, useRef } from 'react';
+import { useHover } from '@/hooks/useHover';
 import styles from './Logo.module.scss';
 
 const Logo = ({ lng }: { lng: string }) => {
-  const root = useRef(null);
-
-  useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.to('.box', { duration: 0.2, rotate: 40 });
-    tl.to('.box', { duration: 0.5, rotate: -40 });
-    tl.to('.box', { duration: 0.7, rotate: 20 });
-    tl.to('.box', { duration: 1, rotate: 10 });
-
-    const animationInterval = setInterval(() => {
-      tl.restart();
-    }, 5000);
-
-    return () => {
-      clearInterval(animationInterval);
-    };
-  }, []);
+  const { rootRef } = useHover();
 
   return (
     <Link
       className={styles['header-logo']}
-      ref={root}
+      ref={rootRef}
       data-text="홈 로고"
       href={`/${lng}`}
     >
-      <div className={`box ${styles.word}`}>D</div>O
-      <span className={styles.point}>Y</span>U
+      <h1 className="blind">DOYU</h1>
+      <div aria-hidden className={`box ${styles.word}`}>
+        D
+      </div>
+      <span aria-hidden>O</span>
+      <span aria-hidden className={styles.point}>
+        Y
+      </span>
+      <span aria-hidden>U</span>
     </Link>
   );
 };

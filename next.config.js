@@ -2,8 +2,9 @@
 const path = require('path');
 
 const nextConfig = {
+  reactStrictMode: false,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'style')],
+    includePaths: [path.join(__dirname, 'src/styles/base')],
   },
 };
 

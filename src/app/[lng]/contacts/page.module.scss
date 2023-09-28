@@ -1,0 +1,50 @@
+@import 'mixins';
+
+.container {
+  position: absolute;
+  top: 0;
+  @include center-center(column);
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+
+  .wrapper {
+    @include center-center(column);
+    width: 800px;
+
+    .title-wrapper {
+      @include center-center(column);
+      width: 90%;
+    
+      .title-box {
+        @include flex(flex-start, center);
+        width: 95%;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+      
+      .title {
+        margin-right: 1rem;
+        font-family: var(--font-balooBhaina);
+        @include titleAgain(en);
+      }
+    
+      .ko {
+        @include titleAgain(ko);
+      }
+      .sub-title {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.contents-box {
+  display: flex;
+  width: 800px;
+  height: 100%;
+
+  .info-box {
+    padding-top: 5px;
+  }
+}
