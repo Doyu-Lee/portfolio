@@ -1,9 +1,16 @@
+@import 'mixins';
+
 .button-box {
   position: fixed;
+  @include center-center();
   z-index: 501;
   top: 0%;
-  right: 6%;
-  width: 100px;
-  height: 81px;
+  right: 5%;
+  width: 80px;
+  height: 80px;
   font-family: var(--font-balooBhaina);
+  
+  @media screen and (max-width: 767px) {
+    font-size: var(--text-m);
+  }
 }

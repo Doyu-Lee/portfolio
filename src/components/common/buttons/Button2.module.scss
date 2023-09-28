@@ -1,11 +1,5 @@
 @import 'mixins';
 
-.button-box {
-  @include center-center();
-  width: 130px;
-  height: 100%;
-}
-
 .button {
   @include center-center();
   width: 50px;
@@ -13,12 +7,15 @@
   padding-top: 2px;
   transition: all 0.3s ease-in-out;
   border: 1.5px solid var(--color-light-primary);
-  border-radius: 17px;
   border-radius: var(--rounded-default);
   color: var(--color-gray4);
   font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
+
+  @media screen and (max-width: 479px) {
+    font-size: var(--text-default);
+  }
 
   &:hover {
     color: var(--color-primary);

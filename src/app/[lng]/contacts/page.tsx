@@ -40,7 +40,9 @@ export default function Contacts({ params: { lng } }: LngParamsProps) {
               />
             ))}
           </div>
-          <Card3D lng={lng} />
+          <div className={styles['card-box']}>
+            <Card3D lng={lng} />
+          </div>
         </div>
       </div>
     </div>

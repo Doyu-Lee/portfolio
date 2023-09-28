@@ -1,6 +1,18 @@
+@import 'mixins';
+
 .box {
   font-size: 1.3rem;
   line-height: 1.6rem;
+
+  @media screen and (max-width: 800px) {
+    @include center-center(column);
+   }
+  @media screen and (max-width: 767px) {
+  font-size: var(--text-default);
+  }
+  @media screen and (max-width: 479px) {
+    font-size: var(--text-s);
+  }
 
   &.ko {
     font-family: var(--font-ko-wooju);
@@ -9,6 +21,15 @@
   .point {
     height: 1.6rem;
     color: var(--color-primary);
+    text-align: center;
+
+    @media screen and (max-width: 479px) {
+    white-space: pre-line;
+    
+    &.ko {
+      height: 3.2rem;
+      }
+    }
   }
 }
 

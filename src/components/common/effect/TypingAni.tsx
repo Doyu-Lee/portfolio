@@ -15,9 +15,9 @@ export default function TypingAni({ lng }: LngProps) {
   return (
     <div className={`${styles.box} ${lng === 'ko' && styles.ko}`}>
       {lng === 'en' && t('subtitle4')}
-      <div className={styles.point}>
+      <div className={`${styles.point} ${lng === 'ko' && styles.ko}`}>
         {isMounting && (
-          <div>
+          <div className={styles.words}>
             {text}
             <Cursor cursorColor="green" />
           </div>
