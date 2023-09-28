@@ -1,7 +1,7 @@
+@import 'mixins';
+
 .button-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include center-center();
 }
 
 .button {

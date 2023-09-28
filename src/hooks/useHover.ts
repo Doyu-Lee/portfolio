@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef } from 'react';
 
 export const useHover = () => {
   const rootRef = useRef<HTMLAnchorElement | null>(null);
+  const root = rootRef.current;
 
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -14,18 +15,19 @@ export const useHover = () => {
     const handleHover = () => tl.play();
     const handleUnhover = () => tl.reverse();
 
-    const root = rootRef.current;
     if (root) {
       root.addEventListener('mouseenter', handleHover);
       root.addEventListener('mouseleave', handleUnhover);
+      handleUnhover();
 
       return () => {
         root.removeEventListener('mouseenter', handleHover);
         root.removeEventListener('mouseleave', handleUnhover);
       };
     }
+
     return undefined;
-  }, []);
+  }, [root]);
 
   return { rootRef };
 };
