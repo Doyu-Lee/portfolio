@@ -9,12 +9,12 @@ export default function TypingAni({ lng }: LngProps) {
   const { isMounting } = useAfterSeconds(2000);
 
   const [text] = useTypewriter({
-    words: ['--', t('subTitle1'), t('subTitle2'), t('subTitle3')],
+    words: ['--', t('subtitle1'), t('subtitle2'), t('subtitle3')],
   });
 
   return (
     <div className={`${styles.box} ${lng === 'ko' && styles.ko}`}>
-      {lng === 'en' && t('subTitle4')}
+      {lng === 'en' && t('subtitle4')}
       <div className={styles.point}>
         {isMounting && (
           <div>
@@ -23,7 +23,7 @@ export default function TypingAni({ lng }: LngProps) {
           </div>
         )}
       </div>
-      {lng === 'ko' && t('subTitle4')}
+      {lng === 'ko' && t('subtitle4')}
     </div>
   );
 }

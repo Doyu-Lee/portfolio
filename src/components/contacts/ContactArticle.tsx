@@ -5,11 +5,11 @@ import styles from './ContactArticle.module.scss';
 
 interface Modal1Props {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
   url?: string;
 }
 
-const ContactArticle = ({ title, subTitle, url }: Modal1Props) => {
+const ContactArticle = ({ title, subtitle, url }: Modal1Props) => {
   return (
     <section className={styles.container}>
       {url ? (
@@ -23,7 +23,7 @@ const ContactArticle = ({ title, subTitle, url }: Modal1Props) => {
           <div className={styles['mail-box']}>
             <h3 className={styles['mail-title']}>{title}</h3>
             <div className={styles['subtitle-box']}>
-              <div className={styles.subtitle}>{subTitle}</div>
+              <div className={styles.subtitle}>{subtitle}</div>
             </div>
           </div>
         </div>
