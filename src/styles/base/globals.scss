@@ -23,6 +23,13 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Somi.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'EF_jejudoldam';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+}
+
 :root {
   --dark: #242423;
 
@@ -40,6 +47,7 @@
   --color-primary: darkcyan;
   --color-light-primary: rgb(117, 173, 173);
   
+  --color-dark-green-bg: #3a7272;
   --color-point-dark-green1: #5b8683;
   --color-point-dark-green2: #7e9d9b;
   --color-point-light-green: #b7eae5ad;
@@ -75,8 +83,9 @@
   --font-ko-header: 'ChosunGu';
   --font-ko-wooju: 'HakgyoansimWoojuR';
   
+  //style
+  --font-jejudoldam: 'EF_jejudoldam';
   --font-ko-somi: 'Somi';
-
 
   .blind {
     position: absolute;
