@@ -8,13 +8,18 @@ interface Button1Props {
   handler?: () => void;
   title?: string;
   children?: ReactNode;
+  lng?: string;
 }
 
-const Button2 = ({ handler, title, children }: Button1Props) => {
+const Button2 = ({ handler, title, children, lng }: Button1Props) => {
   const buttonContents = getProps(title, children);
 
   return (
-    <button type="button" className={styles.button} onClick={handler}>
+    <button
+      type="button"
+      className={`${styles.button} ${lng === 'ko' && styles.en}`}
+      onClick={handler}
+    >
       {buttonContents}
     </button>
   );
