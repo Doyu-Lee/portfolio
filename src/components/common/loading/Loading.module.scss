@@ -17,6 +17,11 @@
     overflow: hidden;
     border-radius: var(--rounded-full);
     
+    @media screen and (max-width: 479px) {
+      width: 250px;
+      height: 250px;
+    }
+
     img {
       width: 190%;
       margin: 237px 220px 0 0;
@@ -25,6 +30,10 @@
       animation-duration: 3s;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
+
+      @media screen and (max-width: 479px) {
+        margin: 200px 160px 0 0;
+      }
     }
   }
 }
