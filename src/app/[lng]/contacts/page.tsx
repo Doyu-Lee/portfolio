@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { useTranslation } from '@/app/i18n/client';
+import Card3D from '@/components/common/effect/card/Card';
 import TypingAni from '@/components/common/effect/TypingAni';
 import ContactArticle from '@/components/contacts/ContactArticle';
 import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR';
@@ -34,10 +35,13 @@ export default function Contacts({ params: { lng } }: LngParamsProps) {
               <ContactArticle
                 key={info.title}
                 title={info.title}
-                subTitle={info.subTitle}
+                subtitle={info.subtitle}
                 url={info.url}
               />
             ))}
+          </div>
+          <div className={styles['card-box']}>
+            <Card3D lng={lng} />
           </div>
         </div>
       </div>

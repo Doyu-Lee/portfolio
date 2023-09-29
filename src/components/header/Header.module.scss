@@ -6,8 +6,9 @@
   top: 0;
   left: 0;
   @include center-center();
-  width: 100%;
+  width: 100vw;
   height: 80px;
+  background-color: var(--color-bg);
 
   &:before {
     content: '';
@@ -38,11 +39,23 @@
   margin-right: 5rem;
   font-size: var(--text-l);
 
+  @media screen and (max-width: 767px) {
+    margin-right: 4rem;
+    font-size: var(--text-m);
+  }
+  @media screen and (max-width: 479px) {
+    font-size: var(--text-s);
+  }
+  
   .menu {
     display: inline-block;
     position: relative;
-    margin-right: 35px;
+    margin: 10px 35px 10px 10px;
     transition: all 0.2s ease-in-out;
+    
+    @media screen and (max-width: 479px) {
+      margin-right: 5px;
+    }
 
     &:hover .highlight:after {
       width: 100%;

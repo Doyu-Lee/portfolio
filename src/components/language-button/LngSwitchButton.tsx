@@ -11,7 +11,7 @@ const LngSwitchButton = ({ lng, url }: LngSwitch) => {
         .filter((l) => lng !== l)
         .map((l) => {
           return (
-            <Button2 key={l}>
+            <Button2 key={l} lng={lng}>
               <Link href={url ? `/${l}/${url}` : `/${l}`}>{l}</Link>
             </Button2>
           );

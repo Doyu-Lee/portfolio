@@ -1,50 +1,95 @@
 @import 'mixins';
 
 .container {
-  position: absolute;
-  top: 0;
-  @include center-center(column);
   width: 100%;
-  height: calc(100vh - 80px);
-  margin-top: 80px;
+  height: 100%;
 
   .wrapper {
     @include center-center(column);
-    width: 800px;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 900px) {
+      @include center-center(column);
+      width: 100vw;
+    }
+
 
     .title-wrapper {
-      @include center-center(column);
+      @include center-center();
       width: 90%;
-    
+      margin: 1rem 0;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        margin: 0.6rem 0;
+      }
+        
       .title-box {
-        @include flex(flex-start, center);
+        @include flex(flex-start, center); 
         width: 95%;
         height: 80px;
-        margin-bottom: 10px;
-      }
-      
-      .title {
-        margin-right: 1rem;
-        font-family: var(--font-balooBhaina);
-        @include titleAgain(en);
-      }
-    
-      .ko {
-        @include titleAgain(ko);
-      }
-      .sub-title {
-        margin-left: 2rem;
+        cursor: default;
+
+        @media screen and (max-width: 800px) {
+          @include center-center(column);
+          width: 100%;
+          height: 100%;
+          margin-bottom: 1rem;
+        }
+        
+        .title {
+          margin-right: 2rem;
+          font-family: var(--font-balooBhaina);
+          @include titleAgain(en);
+          @media screen and (max-width: 800px) {
+           margin: 0.5rem 0;
+          }
+          
+          &.ko {
+            @include titleAgain(ko);
+          }
+        }
+        
+        .sub-title {
+          margin-left: 2rem;
+          @media screen and (max-width: 800px) {
+            margin-left: 0;
+          }
+        }
       }
     }
   }
-}
+  
+  .contents-box {
+    display: flex;
+    @include center-center(row);
+    width: 800px;
 
-.contents-box {
-  display: flex;
-  width: 800px;
-  height: 100%;
+    @media screen and (max-width: 900px) {
+      @include center-center(column);
+      width: 90%;
+      height: 100%;
+    }
 
-  .info-box {
-    padding-top: 5px;
-  }
+    .info-box {
+      @include center-center(column);
+
+      @media screen and (max-width: 900px) {
+        @include center-center(row);
+        flex-wrap: wrap;
+        width: 90%;
+      }
+      @media screen and (max-width: 767px) {
+        @include center-center(column);
+        width: 100%;
+      }
+    }
+    
+    .card-box {
+      position: relative;
+      width: 100%;
+      height: 370px;
+    }
+  } 
 }

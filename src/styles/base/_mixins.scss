@@ -54,10 +54,19 @@
     @if $lan == 'ko' {
             padding-bottom: 13px;
             font-family: var(--font-ko-somi);
-            font-size: 3.7rem;
+            font-size: var(--title-ko-laptop);
+
+            @media screen and (max-width: 767px) {
+              font-size: var(--title-ko-mobile);
+            }
+            
   } @else {
             font-family: var(--font-permanentMarker);
-            font-size: 3rem;
+            font-size: var(--title-en-laptop);
             font-weight: 600;
+            
+            @media screen and (max-width: 767px) {
+              font-size: var(--title-en-mobile);
+            }
   }
 }

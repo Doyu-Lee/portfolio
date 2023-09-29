@@ -1,9 +1,25 @@
+@import 'mixins';
+
 .header-logo {
   position: relative;
   padding: 0 4px 0 30px;
   color: var(--color-gray01);
   font-family: var(--font-megrim);
   font-size: var(--logo-laptop);
+
+  @media screen and (max-width: 767px) {
+    font-size: var(--logo-mobile);
+  }
+  @media screen and (max-width: 479px) {
+    :not(.point) {
+    display: none;
+    }
+    padding: 0;
+  }
+  @media screen and (max-width: 370px) {
+    @include center-center(column);  
+    padding: 0 4px 0 4px;
+  }
 
   &:hover {
     color: var(--color-primary);
