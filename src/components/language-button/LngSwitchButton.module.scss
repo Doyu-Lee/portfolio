@@ -5,12 +5,13 @@
   @include center-center();
   z-index: 501;
   top: 0%;
-  right: 5%;
+  right: 7%;
   width: 80px;
   height: 80px;
   font-family: var(--font-balooBhaina);
-  
+
   @media screen and (max-width: 767px) {
+    right: 5%;
     font-size: var(--text-m);
   }
 }

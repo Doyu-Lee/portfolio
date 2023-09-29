@@ -23,8 +23,10 @@
     color: var(--color-primary);
 
     @media screen and (max-width: 800px) {
-    white-space: pre-line;
     text-align: center;
+    @media screen and (max-width: 479px) {
+    white-space: pre-line;
+    }
 
     &.ko {
       height: 3.2rem;

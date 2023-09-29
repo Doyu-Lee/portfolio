@@ -40,10 +40,10 @@
   font-size: var(--text-l);
 
   @media screen and (max-width: 767px) {
+    margin-right: 4rem;
     font-size: var(--text-m);
   }
   @media screen and (max-width: 479px) {
-    margin-right: 4rem;
     font-size: var(--text-s);
   }
   

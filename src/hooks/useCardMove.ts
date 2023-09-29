@@ -1,49 +1,51 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useCallback, useLayoutEffect, useRef } from 'react';
 import { useCheckMobile } from './useCheckMobile';
 
 export const useCardMove = () => {
   const wrap = useRef<HTMLDivElement>(null);
-  let x = 0;
-  let y = 0;
-  let mx = 0;
-  let my = 0;
-  const xRef = useRef<number | null>(null);
-  const yRef = useRef<number | null>(null);
+
+  const xRef = useRef<number>(0);
+  const yRef = useRef<number>(0);
+  const mxRef = useRef<number>(0);
+  const myRef = useRef<number>(0);
+
   const isMobile = useCheckMobile();
 
-  const handleMouseMove = (e: MouseEvent) => {
-    x = e.clientX - window.innerWidth / 2;
-    y = e.clientY - window.innerHeight / 2;
-  };
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    xRef.current = e.clientX - window.innerWidth / 2;
+    yRef.current = e.clientY - window.innerHeight / 2;
+  }, []);
 
-  const handleMobileMove = (e: DeviceOrientationEvent) => {
-    xRef.current = e.gamma;
-    yRef.current = e.beta;
-  };
+  const handleMobileMove = useCallback((e: DeviceOrientationEvent) => {
+    if (e.gamma && e.beta) {
+      xRef.current = e.gamma;
+      yRef.current = e.beta;
+    }
+  }, []);
 
-  const loop = () => {
-    mx += (x - mx) * 0.1;
-    my += (y - my) * 0.1;
+  const loop = useCallback(() => {
+    mxRef.current += (xRef.current - mxRef.current) * 0.1;
+    myRef.current += (yRef.current - myRef.current) * 0.1;
 
     if (wrap.current) {
       wrap.current.style.transform = `translate3d(-50%, -50%, 0) rotateX(${
-        my / 10
-      }deg) rotateY(${-mx / 10}deg)`;
+        myRef.current / 10
+      }deg) rotateY(${-mxRef.current / 10}deg)`;
     }
 
     window.requestAnimationFrame(loop);
-  };
+  }, []);
 
-  const loopMobile = () => {
-    mx += (x - mx) * 0.1;
-    my += (y - my) * 0.1;
+  const loopMobile = useCallback(() => {
+    mxRef.current += (xRef.current - mxRef.current) * 0.1;
+    myRef.current += (yRef.current - myRef.current) * 0.1;
     if (wrap.current) {
       wrap.current.style.transform = `translate3d(-50%, -50%, 0) rotateX(${
-        my - 50
-      }deg) rotateY(${mx}deg)`;
+        myRef.current - 50
+      }deg) rotateY(${mxRef.current}deg)`;
     }
     window.requestAnimationFrame(loopMobile);
-  };
+  }, []);
 
   useLayoutEffect(() => {
     if (isMobile) {
@@ -60,7 +62,7 @@ export const useCardMove = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [isMobile, loop, loopMobile, handleMouseMove, handleMobileMove]);
 
   return { wrap };
 };
