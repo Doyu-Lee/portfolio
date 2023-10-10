@@ -1,7 +1,8 @@
 import '@/styles/base/globals.scss';
+import 'react-notion-x/src/styles.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
-import Header from '@/components/header/Header';
+import Header from '@/components/layouts/header/Header';
 import { LngParamsProps } from '@/types/lngSwitch';
 import {
   IBMPlexMono,
@@ -9,6 +10,10 @@ import {
   mansalva,
   megrim,
   permanentMarker,
+  solway,
+  balooBhaina,
+  chakraPatch,
+  spaceMono,
 } from '../../../public/fonts/fonts';
 import { languages } from '../i18n/settings';
 
@@ -26,17 +31,19 @@ interface RootLayoutProps extends LngParamsProps {
 }
 
 export default function RootLayout({ children, params: { lng } }: RootLayoutProps) {
+  const fontVariables = `
+  ${mansalva.variable} 
+  ${megrim.variable} 
+  ${lobster.variable} 
+  ${permanentMarker.variable} 
+  ${solway.variable} 
+  ${balooBhaina.variable} 
+  ${chakraPatch.variable} 
+  ${spaceMono.variable} 
+  ${IBMPlexMono.variable}`;
+
   return (
-    <html
-      lang={lng}
-      dir={dir(lng)}
-      className={`
-      ${mansalva.variable} 
-      ${megrim.variable} 
-      ${lobster.variable} 
-      ${permanentMarker.variable} 
-      ${IBMPlexMono.variable}`}
-    >
+    <html lang={lng} dir={dir(lng)} className={fontVariables}>
       <body>
         <Header lng={lng} />
         {children}
