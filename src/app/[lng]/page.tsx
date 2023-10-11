@@ -1,16 +1,32 @@
+import { NotionAPI } from 'notion-client';
+import Intro from '@/components/common/effect/Intro';
 import LngSwitchButtonSSR from '@/components/language-button/LngSwitchButtonSSR';
+import Footer from '@/components/layouts/footer/Footer';
+import NotionPage from '@/components/notion/NotionPages';
 import { LngParamsProps } from '@/types/lngSwitch';
-import { useTranslation } from '../i18n';
 import styles from './page.module.scss';
 
-export default async function Home({ params: { lng } }: LngParamsProps) {
-  const { t } = await useTranslation(lng, 'home');
+export const notion = new NotionAPI({
+  authToken: process.env.NOTION_TOKEN_V2,
+});
 
-  return (
-    <main className={styles.main}>
-      <h2>{t('title')}</h2>
-      <h2>{t('to-Mango')}</h2>
-      <LngSwitchButtonSSR lng={lng} url="/" />
-    </main>
-  );
-}
+const Home = async ({ params: { lng } }: LngParamsProps) => {
+  try {
+    const recordMap = await notion.getPage(
+      process.env.NOTION_PAGE_ID ? process.env.NOTION_PAGE_ID : '',
+    );
+
+    return (
+      <main className={styles.container}>
+        <LngSwitchButtonSSR lng={lng} url="/" />
+        <Intro lng={lng} />
+        <NotionPage recordMap={recordMap} />
+        <Footer lng={lng} />
+      </main>
+    );
+  } catch (error) {
+    return console.error(error);
+  }
+};
+
+export default Home;
