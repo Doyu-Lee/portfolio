@@ -30,8 +30,21 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'MapoFlowerIsland';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'IM_Hyemin-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+}
+
 :root {
-  --dark: #242423;
 
   /* font-size */
   --text-xs: 0.75rem; // 12
@@ -54,7 +67,9 @@
   --color-light-primary: rgb(117, 173, 173);
   
   --color-dark-green-bg: #3a7272;
-  --color-light-green-bg: #cfe1dd;
+  --color-dark-green-bg2: #277b7b;
+  --color-light-green-bg: #ddedea;
+  --color-light-green-opacity: #f4f8f7fd;
 
   --color-point-dark-green1: #5b8683;
   --color-point-dark-green2: #7e9d9b;
@@ -94,6 +109,10 @@
   //style
   --font-jejudoldam: 'EF_jejudoldam';
   --font-ko-somi: 'Somi';
+  --font-mapo-flower: 'MapoFlowerIsland';
+
+  //guide
+  --font-guide: 'IM_Hyemin-Bold';
 
   .blind {
     position: absolute;
@@ -102,6 +121,16 @@
     margin: -1px;
     overflow: hidden;
   }
+
+  ::-webkit-scrollbar {
+    width: 1vw; 
+  }
+  
+  ::-webkit-scrollbar-thumb {  
+    border-radius: 30px;
+    background: linear-gradient(195deg, var(--color-primary), #EFF1F8);
+  }
+
 }
 
 *,
