@@ -70,3 +70,71 @@
             }
   }
 }
+
+@mixin highlight {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover .highlight:after {
+    width: 100%;
+  }
+
+  .highlight:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 10px;
+    transform: rotate(-2deg);
+    transition: 0.4s all;
+    background: var(--color-point-light-green);
+  }
+}
+
+@mixin highlight {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover .highlight:after {
+    width: 100%;
+  }
+
+  .highlight:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 10px;
+    transform: rotate(-2deg);
+    transition: 0.4s all;
+    background: var(--color-point-light-green);
+  }
+}
+
+@mixin highlight-everytime($color: var(--color-point-light-green)) {
+  box-shadow: inset 0 -20px 0 $color;
+}
+
+@mixin relative-title-font($m901, $m900, $m767, $m478, $m300) {
+  @media screen and (min-width: 901px) {
+    font-size: #{$m901}rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: #{$m900}rem;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: #{$m767}rem;
+  }
+  @media screen and (max-width: 478px) {
+    font-size: #{$m478}rem;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: #{$m300}rem;
+  }
+}
