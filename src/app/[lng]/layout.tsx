@@ -21,7 +21,7 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export const revalidate = 3600 * 6;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Create Next App',

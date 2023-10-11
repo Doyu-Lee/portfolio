@@ -1,5 +1,5 @@
 import NotionPage from '@/components/notion/NotionPages';
-import { notion } from '../notion/page';
+import { notion } from '../page';
 
 interface fetchEachPagesProps {
   params: {
