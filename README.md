@@ -91,12 +91,16 @@ pnpm dev
 
 ### - 다국적 언어 지원
 
+<br />
+
 #### 1. 렌더링 방식에 따른 한/영 변환 기능
 - 지원하는 언어 별 json 데이터 생성
 - SSR / CSR용 useTranslation 훅 개별 생성 
 - 페이지마다 params 및 URL 추출 로직을 추가 
 - `en/roadmap`에서 언어 전환 버튼을 눌렀을 때, `ko`가 아니라 `ko/roadmap`으로 이동하도록 함.
 - 헤더에서 한/영 변환에 따른 폰트를 개별적으로 적용
+
+<br />
 
 #### 2. JEST 동적 라우팅 테스트
 - 전역에 jest react-i18next 모듈 추가
@@ -106,10 +110,12 @@ pnpm dev
 
 ### - 최적화
 
+<br />
+
 #### 1. next.js 내장기능을 사용한 최적화 
 - `next/link`, `next/dynamic`, `next/font`, `next/image` 등을 이용한 성능 최적화 
 
-##### next/font 
+##### [next/font] 
 - 폰트의 경우 아래와 같이 전역 변수로 등록하여 사용
 
 ``` typescript
@@ -145,7 +151,8 @@ export default function RootLayout({ children, params: { lng } }: RootLayoutProp
 
 > `next/font/google`에 내장되어 있는 영어 폰트에 한하여 빌드타임에 미리 로컬에 폰트를 저장할 수 있기 때문에 영문 폰트와 관련된 layout shift를 최소화하여 성능을 최적화하였습니다. 외부에서 가져온 한글 폰트는 로딩 컴포넌트를 삽입하여 로드되기 전 레이아웃이 깨지는 현상을 막았습니다.
 
-##### next/dynamic
+
+##### [next/dynamic]
 
 > preload 될 필요가 없는 컴포넌트는 Lazy Loading으로 네트워크 비용을 절감시키고자 했습니다.
 
@@ -160,9 +167,13 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 ### - 노션API
 
+<br />
+
 #### 1. 노션 API를 활용한 페이지 연동 
 - ISR 기능 활용
   - revalidate 변수를 선언하여 1시간 마다 데이터 refetching 
+
+<br />
 
  #### 2. 미들웨어를 활용한 리다이렉션 설정
   - 리다이렉션 이슈를 미들웨어를 활용하여 해결
@@ -176,27 +187,34 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 ### - 인터랙티브 
 
+<br />
+
 #### 1. 3D 카드 효과 추가
 - `transform-style: preserve-3d` 속성을 활용 
 - 데이터가 변동되면 화면이 리렌더링되는 useState 대신 useRef를 사용하여 데이터 변경 
 - `useLayoutEffect`를 이용하여 컴포넌트가 렌더링되기 전에 동기적으로 애니메이션 이벤트 등록 및 함수 실행
 - 애니메이션 최적화 API `requestAnimationFrame()` 적용
 
+<br />
+
 #### 2. 타이핑 효과 애니메이션 컴포넌트 및 영/한 데이터 추가
 - `react-typist` 라이브러리를 사용했지만 최신 React 18버전 이상에서 호환되지 않는 일부 성능 문제가 발생
 - [해당 라이브러리 레포지토리 이슈](https://github.com/jstejada/react-typist/issues/124)에서 관련 문제 발견 후, 2022년 초부터 업데이트가 안 되고 있다는 것을 확인 
 - `react-simple-typist`로 라이브러리 교체 후 이상없이 작동 
+
+<br />
 
 #### 3. useRef 배열로 관리하며 도미노 글자 애니메이션 직접 구현 
 - span을 생성하는 `useEffect`, 해당 span에 시간차로 css를 적용하는 `useEffect`로 도미노처럼 차례대로 쓰러지는 듯한 글자 애니메이션을 적용
 - `useEffect` 안에서 `useRef`과 같은 훅 사용이 불가능하기 때문에 `useEffect` 안에서 각 글자 데이터들이 map 함수에서 span 태그를 생성하는 로직을 짤 때 `createRef`를 사용하였지만 추후 함수 컴포넌트 방식에 맞게 `useRef`를 배열로 선언해준 다음 `useEffect` 안의 map 함수에서 해당 배열에 span 태그와 `ref` 값을 차례로 할당시키는 방법으로 리팩토링
 
 ```typeScript
+  const [childRef, setChildRef] = useState<React.JSX.Element[]>([]);
   const spanRefs = useRef<null[] | HTMLSpanElement[]>([]);
   ...
   useEffect(() => {
     ...
-      letters.map((letter, index) => {  // 예 ) letters =  '안녕하세요'.split('');
+      letters.map((letter, index) => {  // 예 ) letters =  '망고'.split('');
         const newSpan = (
           <span
             key={Math.random()}
@@ -213,11 +231,19 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
     return () => setChildRef([]);
   }, [titleLetters]);
+
+  ...
+    return (
+          <div>
+            {childRef}  // 예) <span>망</span> <span>고</span>  
+          </div>
 ```
 
 <br />
 
 ### - 기타
+
+<br />
 
 #### 1. 페이지 반응형 적용 
 - 예상하는 사용자 접속 경로는 웹이지만, 갤럭시 폴드 (min-width : 280px)까지 반응형 적용 
