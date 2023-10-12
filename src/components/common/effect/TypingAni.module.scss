@@ -26,10 +26,9 @@
     text-align: center;
     @media screen and (max-width: 479px) {
     white-space: pre-line;
-    }
-
-    &.ko {
-      height: 3.2rem;
+      &.ko {
+        height: 3.2rem;
+        }
       }
     }
   }

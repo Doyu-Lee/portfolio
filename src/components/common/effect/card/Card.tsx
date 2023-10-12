@@ -31,7 +31,6 @@ const Card3D = ({ lng }: LngProps) => {
           <div className={styles.back} />
         </>
       )}
-      ;
     </div>
   );
 };
