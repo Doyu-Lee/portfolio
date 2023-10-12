@@ -1,0 +1,39 @@
+@import 'mixins';
+
+.box {
+  position: absolute;
+  z-index: 999;
+  flex-direction: column;
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  pointer-events: none;
+
+  .image-box {
+    @include flex(center, center);
+    width: 333px;
+    height: 333px;
+    overflow: hidden;
+    border-radius: var(--rounded-full);
+    
+    @media screen and (max-width: 479px) {
+      width: 250px;
+      height: 250px;
+    }
+
+    img {
+      width: 190%;
+      margin: 237px 220px 0 0;
+      @include tilt;
+      -webkit-animation-duration: 5s;
+      animation-duration: 3s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+
+      @media screen and (max-width: 479px) {
+        margin: 200px 160px 0 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 테스트입니다. 1`] = `
+<div>
+  <header
+    class="header-nav"
+  >
+    <div
+      class="nav-box"
+    >
+      <a
+        class="header-logo"
+        data-text="홈 로고"
+        href="/ko"
+      >
+        <span
+          class="box"
+        >
+          D
+        </span>
+        O
+        <span
+          class="point"
+        >
+          Y
+        </span>
+        U
+      </a>
+      <div
+        class="align"
+      >
+        <nav
+          class="menu-box ko"
+        >
+          <a
+            class="menu"
+            data-text="roadmap"
+            href="/ko/roadmap"
+          >
+            <span
+              class="highlight"
+            />
+            roadmap
+          </a>
+          <a
+            class="menu"
+            data-text="dots"
+            href="/ko/dots"
+          >
+            <span
+              class="highlight"
+            />
+            dots
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+`;

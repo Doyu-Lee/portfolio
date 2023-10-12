@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.button-box {
+  position: fixed;
+  @include center-center();
+  z-index: 501;
+  top: 0%;
+  right: 3%;
+  width: 80px;
+  height: 80px;
+  font-family: var(--font-IBMPlexMono), Arial, Helvetica, sans-serif;
+
+  @media screen and (max-width: 767px) {
+    right: 5%;
+    font-size: var(--text-m);
+  }
+}

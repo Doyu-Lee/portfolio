@@ -1,0 +1,39 @@
+@import 'mixins';
+
+.header-logo {
+  position: relative;
+  padding: 0 4px 0 30px;
+  color: var(--color-gray01);
+  font-family: var(--font-megrim);
+  font-size: var(--logo-laptop);
+
+  @media screen and (max-width: 767px) {
+    font-size: var(--logo-mobile);
+  }
+  @media screen and (max-width: 479px) {
+    :not(.point) {
+    display: none;
+    }
+    padding: 0;
+  }
+  @media screen and (max-width: 370px) {
+    @include center-center(column);  
+    padding: 0 4px 0 4px;
+  }
+
+  &:hover {
+    color: var(--color-primary);
+    text-shadow:
+      0 0 3px rgba(195, 255, 237, 0.3),
+      0 0 7px rgba(195, 255, 237, 0.2),
+      0 0 12px rgba(195, 255, 237, 0.1);
+  }
+
+  .word {
+    display: inline-block;
+  }
+
+  .point {
+    color: var(--color-primary);
+  }
+}

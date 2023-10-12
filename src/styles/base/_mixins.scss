@@ -1,0 +1,140 @@
+// @include
+// @include center-center(row);
+// @include flex(center, center);
+// @include tilt;
+// @include long-shadow-text(500, 0, #7e9d9b);
+
+@mixin center-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin tilt {
+  @keyframes tilt {
+    0% {
+      transform: rotate(0deg);
+      transform: translate(-30px, 50px);
+    }
+    35% {
+      transform: rotate(7deg);
+    }
+    55% {
+      transform: rotate(-1deg);
+    }
+    70% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  animation: tilt 2s ease-in-out infinite;
+}
+
+@mixin long-shadow-text($distance, $blur, $color) {
+  $shadows: null;
+  $color: darken($color, 10);
+  $blur: #{$blur}px;
+  @for$i from 0 through $distance {
+    $dist: $i + px;
+    $shadows: append($shadows, ($dist $dist $blur $color), comma);
+  }
+  text-shadow: $shadows;
+}
+
+@mixin titleAgain($lan) {
+    @if $lan == 'ko' {
+            padding-bottom: 13px;
+            font-family: var(--font-ko-somi);
+            font-size: var(--title-ko-laptop);
+
+            @media screen and (max-width: 767px) {
+              font-size: var(--title-ko-mobile);
+            }
+            
+  } @else {
+            font-family: var(--font-permanentMarker);
+            font-size: var(--title-en-laptop);
+            font-weight: 600;
+            
+            @media screen and (max-width: 767px) {
+              font-size: var(--title-en-mobile);
+            }
+  }
+}
+
+@mixin highlight {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover .highlight:after {
+    width: 100%;
+  }
+
+  .highlight:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 10px;
+    transform: rotate(-2deg);
+    transition: 0.4s all;
+    background: var(--color-point-light-green);
+  }
+}
+
+@mixin highlight {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover .highlight:after {
+    width: 100%;
+  }
+
+  .highlight:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 10px;
+    transform: rotate(-2deg);
+    transition: 0.4s all;
+    background: var(--color-point-light-green);
+  }
+}
+
+@mixin highlight-everytime($color: var(--color-point-light-green)) {
+  box-shadow: inset 0 -20px 0 $color;
+}
+
+@mixin relative-title-font($m901, $m900, $m767, $m478, $m300) {
+  @media screen and (min-width: 901px) {
+    font-size: #{$m901}rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: #{$m900}rem;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: #{$m767}rem;
+  }
+  @media screen and (max-width: 478px) {
+    font-size: #{$m478}rem;
+  }
+  @media screen and (max-width: 300px) {
+    font-size: #{$m300}rem;
+  }
+}
