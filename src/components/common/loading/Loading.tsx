@@ -1,8 +1,11 @@
 import styles from './Loading.module.scss';
 
-export default function Loading() {
-  const imagePaths = '/images/loading/Mango.jpeg';
-
+interface LoadingProps {
+  imagePaths?: string;
+}
+export default function Loading({
+  imagePaths = '/images/loading/Mango.jpeg',
+}: LoadingProps) {
   return (
     <div className={styles.box}>
       <div className={styles['image-box']}>
