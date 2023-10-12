@@ -1,15 +1,23 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from '@/app/i18n/client';
-import Card3D from '@/components/common/effect/card/Card';
-import TypingAni from '@/components/common/effect/TypingAni';
-import ContactArticle from '@/components/contacts/ContactArticle';
 import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR';
 import { contactInfos } from '@/constants/contactInfos';
 import { LngParamsProps } from '@/types/lngSwitch';
 import { getPathFromURL } from '@/utils/common/getPathFromURL';
 import styles from './page.module.scss';
+
+const TypingAni = dynamic(() => import('@/components/common/effect/TypingAni'), {
+  ssr: false,
+});
+const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticle'), {
+  ssr: false,
+});
+const Card3D = dynamic(() => import('@/components/common/effect/card/Card'), {
+  ssr: false,
+});
 
 export default function Contacts({ params: { lng } }: LngParamsProps) {
   const { t } = useTranslation(lng, 'contacts');
