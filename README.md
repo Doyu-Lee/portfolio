@@ -2,6 +2,8 @@
 # DOYU's Blog
 
 
+<br />
+
 > _Next.js의 App Router와 TypeScript, SCSS_ 등으로 **개발과 관련하여 관심있는 주제를 스크랩하고 책, 강의, 세미나 등에서 새롭게 알게된 것들을 기록**하는 등 일부 다국적 서비스가 지원되는 블로그 겸 개인 포트폴리오 사이트입니다. Vercel로 배포되었습니다.
 
 <br />
@@ -56,14 +58,14 @@ NOTION_TOKEN_V2={노션 토큰 값}
 
 ### 2. 패키지매니저로 로컬 설치 및 개발모드로 실행
 
-그 뒤, 로컬에서 실행을 할 수 있습니다. 프로젝트는 pnpm으로 관리됩니다.
+그 뒤, 로컬에서 실행을 할 수 있습니다. 프로젝트는 `pnpm`으로 관리됩니다.
 
 ```
 pnpm install
 pnpm dev
 ```
 
-<hr>
+<br />
 
 ## 🌟 구현 기능
 
@@ -73,21 +75,21 @@ pnpm dev
   - JEST 동적 라우팅 테스트
 - [최적화](#최적화)
   - next.js 내장기능을 사용한 최적화
-    - next/font
-    - next/dynamic 
+    - `next/font`
+    - `next/dynamic` 
 - [노션API](#노션API)
   - 노션 API를 활용한 페이지 연동
   - 미들웨어를 활용한 리다이렉션 설정 
 - [인터랙티브](#인터랙티브)
-  - 3D 카드 효과 추가 (useRef의 데이터 저장 로직, useLayoutEffect)
+  - 3D 카드 효과 추가 (`useRef`의 데이터 저장 로직, `useLayoutEffect`)
   - 타이핑 효과 애니메이션 컴포넌트 및 영/한 데이터 추가
-  - useRef 배열로 관리하며 도미노 글자 애니메이션 직접 구현
+  - `useRef` 배열로 관리하며 도미노 글자 애니메이션 직접 구현
 - [기타](#기타)
   - 페이지 반응형 적용 
 
 <br />
 
-### 다국적 언어 지원
+### - 다국적 언어 지원
 
 #### 1. 렌더링 방식에 따른 한/영 변환 기능
 - 지원하는 언어 별 json 데이터 생성
@@ -102,7 +104,7 @@ pnpm dev
 
 <br />
 
-### 최적화
+### - 최적화
 
 #### 1. next.js 내장기능을 사용한 최적화 
 - `next/link`, `next/dynamic`, `next/font`, `next/image` 등을 이용한 성능 최적화 
@@ -156,7 +158,7 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 <br />
 
-### 노션API
+### - 노션API
 
 #### 1. 노션 API를 활용한 페이지 연동 
 - ISR 기능 활용
@@ -172,7 +174,7 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 <br />
 
-### 인터랙티브 
+### - 인터랙티브 
 
 #### 1. 3D 카드 효과 추가
 - `transform-style: preserve-3d` 속성을 활용 
@@ -215,7 +217,7 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 <br />
 
-### 기타
+### - 기타
 
 #### 1. 페이지 반응형 적용 
 - 예상하는 사용자 접속 경로는 웹이지만, 갤럭시 폴드 (min-width : 280px)까지 반응형 적용 
