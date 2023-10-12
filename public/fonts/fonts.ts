@@ -8,13 +8,14 @@ import {
   Baloo_Bhaina_2,
   Chakra_Petch,
   Solway,
+  Space_Mono,
 } from 'next/font/google';
 
 // logo
-export const mansalva = Mansalva({
+export const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-mansalva',
+  variable: '--font-spaceMono',
 });
 
 export const megrim = Megrim({
@@ -23,11 +24,18 @@ export const megrim = Megrim({
   variable: '--font-megrim',
 });
 
+// menu
+export const mansalva = Mansalva({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-mansalva',
+});
+
 // contents
 export const lobster = Lobster({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-inter',
+  variable: '--font-lobster',
 });
 
 export const IBMPlexMono = IBM_Plex_Mono({
