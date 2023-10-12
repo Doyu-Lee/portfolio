@@ -17,12 +17,14 @@ const Home = async ({ params: { lng } }: LngParamsProps) => {
     );
 
     return (
-      <main className={styles.container}>
-        <LngSwitchButtonSSR lng={lng} url="/" />
-        <Intro lng={lng} />
-        <NotionPage recordMap={recordMap} />
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <LngSwitchButtonSSR lng={lng} url="/" />
+          <Intro lng={lng} />
+          <NotionPage recordMap={recordMap} />
+        </div>
         <Footer lng={lng} />
-      </main>
+      </div>
     );
   } catch (error) {
     return console.error(error);

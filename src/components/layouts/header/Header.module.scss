@@ -23,11 +23,16 @@
 
   .nav-box {
     @include flex(space-between, center);
-    width: 90%;
+    width: 100%;
     height: 100%;
-    padding: 0 10px;
+    margin: 0 20px;
     border-bottom: 1px solid var(--color-gray09);
     font-family: var(--font-IBMPlexMono);
+
+    @media screen and (max-width: 478px) {
+      margin: 0;
+      padding: 0 20px;
+    }
 
     .align {
       @include center-center();
@@ -36,11 +41,11 @@
 }
 
 .menu-box {
-  margin-right: 5rem;
+  margin-right: 8rem;
   font-size: var(--text-l);
 
   @media screen and (max-width: 767px) {
-    margin-right: 4rem;
+    margin-right: 5rem;
     font-size: var(--text-m);
   }
   @media screen and (max-width: 479px) {
@@ -57,23 +62,24 @@
       margin-right: 5px;
     }
 
-    &:hover .highlight:after {
-      width: 100%;
-    }
+    @include highlight;
+    // &:hover .highlight:after {
+    //   width: 100%;
+    // }
 
-    .highlight:after {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      z-index: -1;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 10px;
-      transform: rotate(-2deg);
-      transition: 0.4s all;
-      background: var(--color-point-light-green);
-    }
+    // .highlight:after {
+    //   content: '';
+    //   display: inline-block;
+    //   position: absolute;
+    //   z-index: -1;
+    //   bottom: -2px;
+    //   left: 0;
+    //   width: 0;
+    //   height: 10px;
+    //   transform: rotate(-2deg);
+    //   transition: 0.4s all;
+    //   background: var(--color-point-light-green);
+    // }
   }
 }
 

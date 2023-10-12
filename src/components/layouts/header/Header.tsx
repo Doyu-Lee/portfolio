@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { useTranslation } from '@/app/i18n/client';
+import Loading from '@/components/common/loading/Loading';
+import Logo from '@/components/common/logo/Logo';
 import { navMenus } from '@/constants/navMenus';
 import { useAfterSeconds } from '@/hooks/useAfterSeconds';
-import Loading from '../common/loading/Loading';
-import Logo from '../common/logo/Logo';
 import styles from './Header.module.scss';
 
 const Header = ({ lng }: { lng: string }) => {
