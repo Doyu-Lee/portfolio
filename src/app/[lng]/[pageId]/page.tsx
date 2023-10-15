@@ -30,17 +30,11 @@ interface fetchEachPagesProps {
 }
 
 const fetchEachPages = async ({ params: { pageId, lng } }: fetchEachPagesProps) => {
-  const rootPageId = process.env.NOTION_PAGE_ID;
-
   try {
     const recordMap = await notion.getPage(pageId);
     return (
       <>
-        <NotionEachPage
-          recordMap={recordMap}
-          isRootPage={pageId === rootPageId}
-          lng={lng}
-        />
+        <NotionEachPage recordMap={recordMap} lng={lng} />
         <Footer lng={lng} />
       </>
     );
