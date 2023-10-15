@@ -2,23 +2,15 @@
 
 import Link from 'next/link';
 import { useTranslation } from '@/app/i18n/client';
-import Loading from '@/components/common/loading/Loading';
 import Logo from '@/components/common/logo/Logo';
 import { navMenus } from '@/constants/navMenus';
-import { useAfterSeconds } from '@/hooks/useAfterSeconds';
 import styles from './Header.module.scss';
 
 const Header = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'header');
-  const { isLoading } = useAfterSeconds(800);
 
   return (
     <header className={styles['header-nav']}>
-      {isLoading && (
-        <div className={styles.loading}>
-          <Loading />
-        </div>
-      )}
       <div className={styles['nav-box']}>
         <Logo lng={lng} />
         <div className={styles.align}>
