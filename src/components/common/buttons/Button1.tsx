@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 import { getProps } from '@/utils/common/getButtonProps';
 import styles from './Button1.module.scss';
 
@@ -12,6 +12,7 @@ interface Button1Props {
   isLink?: string;
   toWhere?: string;
   isNewTab?: boolean;
+  isBlocked?: boolean;
 }
 
 const Button1 = ({
@@ -21,8 +22,15 @@ const Button1 = ({
   isLink,
   toWhere,
   isNewTab,
+  isBlocked,
 }: Button1Props) => {
   const contents = getProps(title, children);
+
+  const handleBlockedLink = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (isBlocked) {
+      event.preventDefault();
+    }
+  };
 
   if (isLink && toWhere) {
     return (
@@ -32,6 +40,7 @@ const Button1 = ({
           className={styles.button}
           target={isNewTab ? '_blank' : undefined}
           rel={isNewTab ? 'noopener' : undefined}
+          onClick={handleBlockedLink}
         >
           {contents}
         </Link>
@@ -40,7 +49,12 @@ const Button1 = ({
   }
   return (
     <div className={styles['button-box']}>
-      <button type="button" className={styles.button} onClick={handler}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={handler}
+        disabled={!isBlocked}
+      >
         {contents}
       </button>
     </div>
