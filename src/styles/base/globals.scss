@@ -37,13 +37,6 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'IM_Hyemin-Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
-}
-
 :root {
 
   /* font-size */
@@ -110,9 +103,6 @@
   --font-jejudoldam: 'EF_jejudoldam';
   --font-ko-somi: 'Somi';
   --font-mapo-flower: 'MapoFlowerIsland';
-
-  //guide
-  --font-guide: 'IM_Hyemin-Bold';
 
   .blind {
     position: absolute;

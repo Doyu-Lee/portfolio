@@ -1,6 +1,7 @@
 export interface LngSwitch {
   lng: string;
   url: string;
+  isBlocked?: boolean;
 }
 
 export interface LngParamsProps {

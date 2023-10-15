@@ -9,6 +9,7 @@ import {
   Chakra_Petch,
   Solway,
   Space_Mono,
+  Poor_Story,
 } from 'next/font/google';
 
 // logo
@@ -67,4 +68,10 @@ export const chakraPatch = Chakra_Petch({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-chakraPatch',
+});
+
+export const guide = Poor_Story({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-guide',
 });

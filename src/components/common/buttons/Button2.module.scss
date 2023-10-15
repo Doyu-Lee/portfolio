@@ -27,3 +27,12 @@
   }
 }
 
+.block {
+  border: 1.5px solid var(--color-gray10);
+  color: var(--color-gray09);
+
+  &:hover {
+    color: var(--color-gray09);
+    cursor: not-allowed;
+  }
+}

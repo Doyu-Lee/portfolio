@@ -3,8 +3,8 @@
 import { LngSwitch } from '@/types/lngSwitch';
 import LngSwitchButton from './LngSwitchButton';
 
-const LngSwitchButtonCSR = ({ lng, url }: LngSwitch) => {
-  return <LngSwitchButton lng={lng} url={url} />;
+const LngSwitchButtonCSR = ({ lng, url, isBlocked }: LngSwitch) => {
+  return <LngSwitchButton lng={lng} url={url} isBlocked={isBlocked} />;
 };
 
 export default LngSwitchButtonCSR;
