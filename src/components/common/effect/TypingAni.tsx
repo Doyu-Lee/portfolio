@@ -9,7 +9,7 @@ export default function TypingAni({ lng }: LngProps) {
   const { isMounting } = useAfterSeconds(2000);
 
   const [text] = useTypewriter({
-    words: ['--', t('subtitle1'), t('subtitle2'), t('subtitle3')],
+    words: [' ', t('subtitle1'), t('subtitle2'), t('subtitle3')],
   });
 
   return (
