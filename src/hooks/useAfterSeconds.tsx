@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Loading from '@/components/common/loading/Loading';
+import styles from './useAfterSeconds.module.scss';
 
 export const useAfterSeconds = (seconds: number) => {
   const [isMounting, setIsMounting] = useState(false);
@@ -13,7 +15,13 @@ export const useAfterSeconds = (seconds: number) => {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [seconds]);
 
-  return { isLoading, isMounting };
+  const LoadingComponent = (
+    <div className={styles.loading}>
+      <Loading />
+    </div>
+  );
+
+  return { isLoading, isMounting, LoadingComponent };
 };
