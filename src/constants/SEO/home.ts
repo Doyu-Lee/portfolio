@@ -1,5 +1,6 @@
 export const homeMetaData = {
   metadataKO: {
+    metadataBase: new URL('https://portfolio-doyu.vercel.app/ko'),
     title: {
       template: '🐱 %s | 도유의 블로그',
       default: '🐱 도유의 블로그',
@@ -24,6 +25,7 @@ export const homeMetaData = {
   },
 
   metadataEN: {
+    metadataBase: new URL('https://portfolio-doyu.vercel.app/en'),
     title: {
       template: "🐱 %s | Doyu's Blog",
       default: "🐱 Doyu's Blog",

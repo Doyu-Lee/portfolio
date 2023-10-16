@@ -1,0 +1,21 @@
+.container {
+  position: fixed;
+  z-index: 500;
+  right: 3%;
+  bottom: 3%;
+  transition: all .3s;
+  opacity: 0;
+  color: var(--color-primary); 
+
+  &:hover ~ svg {
+    font-size: 45;
+  }
+
+  &.visibility {
+    opacity: 1;
+  }
+
+  &:active {
+    bottom: 2.5%;
+  }
+}

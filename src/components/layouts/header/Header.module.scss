@@ -63,28 +63,11 @@
     }
 
     @include highlight;
-    // &:hover .highlight:after {
-    //   width: 100%;
-    // }
-
-    // .highlight:after {
-    //   content: '';
-    //   display: inline-block;
-    //   position: absolute;
-    //   z-index: -1;
-    //   bottom: -2px;
-    //   left: 0;
-    //   width: 0;
-    //   height: 10px;
-    //   transform: rotate(-2deg);
-    //   transition: 0.4s all;
-    //   background: var(--color-point-light-green);
-    // }
   }
 }
 
 .ko {
-  font-family: var(--font-ko-header);
+  letter-spacing: 1px;
 }
 
 .loading {
