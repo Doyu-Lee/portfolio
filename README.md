@@ -1,19 +1,34 @@
 
 # DOYU's Blog
 
-
 <br />
 
 > _Next.js의 App Router와 TypeScript, SCSS_ 등으로 **개발과 관련하여 관심있는 주제를 스크랩하고 책, 강의, 세미나 등에서 새롭게 알게된 것들을 기록**하는 등 일부 다국적 서비스가 지원되는 블로그 겸 개인 포트폴리오 사이트입니다. Vercel로 배포되었습니다.
 
 <br />
 
-![블로그](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
 
-- [한국어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/ko)
-- [영어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/en)
+[한국어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/ko) | 
+[영어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/en)
 
  -> 둘 중 한 링크로 들어가셔서 오른쪽 상단의 언어 버튼을 누르셔도 한/영 전환이 됩니다.
+
+**[v1.1]**
+![v1.1](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/da8cf387-a5ec-4618-aefa-30860088425f)
+
+<details>
+  <summary> 히스토리 </summary>
+
+<br>
+
+**[v1.0]**
+![블로그v1.0](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
+
+</details>
+
+<br>
+
+
 
 <br />
 
@@ -69,27 +84,46 @@ pnpm dev
 
 ## 🌟 구현 기능
 
-**[목차]**
-- [다국적 언어 지원](#다국적-언어-지원)
+**목록** _(상세 설명에는 생략된 내용 포함)_
+
+### v1.0
+- **다국적 언어 지원**
   - 렌더링 방식에 따른 한/영 변환 기능
   - JEST 동적 라우팅 테스트
-- [최적화](#최적화)
+- **최적화**
   - next.js 내장기능을 사용한 최적화
     - `next/font`
     - `next/dynamic` 
-- [노션API](#노션API)
+- **노션API**
   - 노션 API를 활용한 페이지 연동
   - 미들웨어를 활용한 리다이렉션 설정 
-- [인터랙티브](#인터랙티브)
+- **인터랙티브**
   - 3D 카드 효과 추가 (`useRef`의 데이터 저장 로직, `useLayoutEffect`)
   - 타이핑 효과 애니메이션 컴포넌트 및 영/한 데이터 추가
   - `useRef` 배열로 관리하며 도미노 글자 애니메이션 직접 구현
-- [기타](#기타)
+- **기타**
   - 페이지 반응형 적용 
+
+### v1.1
+- **`generateMetadata`를 이용한 SSR 메타 태그 적용**
+  - SSR로 동적 메타 태그 생성
+  - 한/영 언어별(동적) 정적 메타 태그 생성
+- **사용자 편의를 위해 상세 페이지 스크롤 기능 추가**
+  - 스크롤 게이지바 UI 
+  - 특정 스크롤 바의 위치를 클릭시 해당 페이지 위치로 이동 
+  - 클릭 후 드래그하여 동시에 페이지 실시간 이동
+- **기타**
+  - 공통 버튼 컴포넌트에 disabled 속성 추가 
+
 
 <br />
 
-### - 다국적 언어 지원
+<details>
+  <summary> v1.0 상세설명 </summary>
+
+<br>
+ 
+ ### - 다국적 언어 지원
 
 <br />
 
@@ -170,8 +204,6 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 <br />
 
 #### 1. 노션 API를 활용한 페이지 연동 
-- ISR 기능 활용
-  - revalidate 변수를 선언하여 1시간 마다 데이터 refetching 
 
 <br />
 
@@ -247,3 +279,77 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 
 #### 1. 페이지 반응형 적용 
 - 예상하는 사용자 접속 경로는 웹이지만, 갤럭시 폴드 (min-width : 280px)까지 반응형 적용 
+
+
+![블로그](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
+
+</details>
+
+<br>
+
+
+<details>
+  <summary> v1.1 상세설명 </summary>
+
+<br>
+
+### - `generateMetadata`를 이용한 SSR 메타 태그 적용
+
+<br />
+
+#### 1. SSR로 동적 메타 태그 생성 
+```typeScript
+type Props = {
+  params: { pageId: string }; // params에서 현재 pageId 추출 
+};
+
+export const generateMetadata = async ({
+  params: { pageId },
+}: Props): Promise<Metadata> => {
+  const recordMap = await notion.getPage(pageId); 
+  const title = getPageTitle(recordMap);   // 해당 pageId의 제목 데이터 가져오기
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
+};
+
+```
+
+
+#### 2. SSR로 한/영 언어별(동적) 정적 메타 태그 생성 
+
+```typeScript
+type Props = {
+  params: { lng: string }; // params 에서 언어 상태 추출 
+};
+
+export const generateMetadata = async ({ params: { lng } }: Props): Promise<Metadata> => {
+  // 언어 상태에 따른 정적 메타 데이터 생성
+  return lng === 'ko' ? homeMetaData.metadataKO : homeMetaData.metadataEN; 
+};
+
+```
+
+
+<br />
+
+### - 사용자 편의를 위해 상세 페이지 스크롤 기능 추가
+<br />
+
+#### 1. 스크롤 게이지바 UI 출력 
+- `useRef`를 사용하여 전체 브라우저의 높이에서 100vh를 뺀 후, scrollTop 위치를 구하여 비율 계산 
+
+<br />
+
+#### 2. 클릭 후 드래그하여 동시에 페이지 실시간 이동 
+- mousedown, mousemove, click 이벤트를 이용하여 이벤트가 일어난 순서대로 events라는 변수를 useState로 상태 관리 
+- click 했을 때 바로 해당 클릭된 위치로 스크롤 이동 
+- click -> mousedown -> mousemove 가 일어난 경우 역시 실시간으로 마우스 위치로 스크롤 동기화
+<br />
+</details>
+
+<br>
