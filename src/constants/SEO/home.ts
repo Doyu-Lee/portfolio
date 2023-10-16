@@ -1,6 +1,13 @@
 export const homeMetaData = {
   metadataKO: {
-    metadataBase: new URL('https://portfolio-doyu.vercel.app/ko'),
+    metadataBase: new URL('https://portfolio-doyu.vercel.app'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'ko-KR': '/ko',
+        'en-US': '/en',
+      },
+    },
     title: {
       template: '🐱 %s | 도유의 블로그',
       default: '🐱 도유의 블로그',
@@ -17,7 +24,7 @@ export const homeMetaData = {
       description: '개발과 관련된 다양한 정보들을 기록하는 장소입니다.',
       images: [
         {
-          url: 'https://portfolio-doyu.vercel.app/images/meta/opengraph-image.png',
+          url: '/images/meta/opengraph-image.png',
           alt: '도유의 블로그 OG 이미지',
         },
       ],
@@ -25,7 +32,14 @@ export const homeMetaData = {
   },
 
   metadataEN: {
-    metadataBase: new URL('https://portfolio-doyu.vercel.app/en'),
+    metadataBase: new URL('https://portfolio-doyu.vercel.app'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'ko-KR': '/ko',
+        'en-US': '/en',
+      },
+    },
     title: {
       template: "🐱 %s | Doyu's Blog",
       default: "🐱 Doyu's Blog",
@@ -42,7 +56,7 @@ export const homeMetaData = {
       description: 'A blog recording various insights related to development',
       images: [
         {
-          url: 'https://portfolio-doyu.vercel.app/images/meta/opengraph-image.png',
+          url: '/images/meta/opengraph-image.png',
           alt: "Doyu's Blog OG Image",
         },
       ],
