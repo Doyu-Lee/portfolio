@@ -17,7 +17,7 @@ export const homeMetaData = {
       description: '개발과 관련된 다양한 정보들을 기록하는 장소입니다.',
       images: [
         {
-          url: '/images/meta/opengraph-image.png',
+          url: 'https://portfolio-doyu.vercel.app/images/meta/opengraph-image.png',
           alt: '도유의 블로그 OG 이미지',
         },
       ],
@@ -42,7 +42,7 @@ export const homeMetaData = {
       description: 'A blog recording various insights related to development',
       images: [
         {
-          url: '/images/meta/opengraph-image.png',
+          url: 'https://portfolio-doyu.vercel.app/images/meta/opengraph-image.png',
           alt: "Doyu's Blog OG Image",
         },
       ],
