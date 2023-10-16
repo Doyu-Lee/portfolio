@@ -1,5 +1,5 @@
 
-# DOYU's Blog
+# DOYU's Blog v1.1.0
 
 <br />
 
@@ -13,7 +13,6 @@
 
  -> 둘 중 한 링크로 들어가셔서 오른쪽 상단의 언어 버튼을 누르셔도 한/영 전환이 됩니다.
 
-**[v1.1]**
 ![v1.1](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/da8cf387-a5ec-4618-aefa-30860088425f)
 
 <details>
@@ -280,6 +279,9 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 #### 1. 페이지 반응형 적용 
 - 예상하는 사용자 접속 경로는 웹이지만, 갤럭시 폴드 (min-width : 280px)까지 반응형 적용 
 
+<br />
+
+### - 화면 
 
 ![블로그](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
 
