@@ -1,6 +1,7 @@
 'use client';
 
-import { ReactNode } from 'react';
+import Link from 'next/link';
+import { MouseEvent, ReactNode } from 'react';
 import { getProps } from '@/utils/common/getButtonProps';
 import styles from './Button2.module.scss';
 
@@ -9,18 +10,54 @@ interface Button1Props {
   title?: string;
   children?: ReactNode;
   lng?: string;
+  isLink?: boolean;
+  toWhere?: string;
+  isNewTab?: boolean;
+  isBlocked?: boolean;
 }
 
-const Button2 = ({ handler, title, children, lng }: Button1Props) => {
-  const buttonContents = getProps(title, children);
+const Button2 = ({
+  handler,
+  title,
+  children,
+  lng,
+  isLink,
+  toWhere,
+  isNewTab,
+  isBlocked = false,
+}: Button1Props) => {
+  const contents = getProps(title, children);
+
+  const handleBlockedLink = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (isBlocked) {
+      event.preventDefault();
+    }
+  };
+
+  if (isLink && toWhere) {
+    return (
+      <div className={styles['button-box']}>
+        <Link
+          href={toWhere}
+          className={`${styles.button} ${isBlocked && styles.block}`}
+          target={isNewTab ? '_blank' : undefined}
+          rel={isNewTab ? 'noopener' : undefined}
+          onClick={handleBlockedLink}
+        >
+          {contents}
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <button
       type="button"
       className={`${styles.button} ${lng === 'ko' && styles.en}`}
       onClick={handler}
+      disabled={!isBlocked}
     >
-      {buttonContents}
+      {contents}
     </button>
   );
 };

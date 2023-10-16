@@ -11,15 +11,15 @@ export const useCardMove = () => {
 
   const isMobile = useCheckMobile();
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    xRef.current = e.clientX - window.innerWidth / 2;
-    yRef.current = e.clientY - window.innerHeight / 2;
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    xRef.current = event.clientX - window.innerWidth / 2;
+    yRef.current = event.clientY - window.innerHeight / 2;
   }, []);
 
-  const handleMobileMove = useCallback((e: DeviceOrientationEvent) => {
-    if (e.gamma && e.beta) {
-      xRef.current = e.gamma;
-      yRef.current = e.beta;
+  const handleMobileMove = useCallback((event: DeviceOrientationEvent) => {
+    if (event.gamma && event.beta) {
+      xRef.current = event.gamma;
+      yRef.current = event.beta;
     }
   }, []);
 

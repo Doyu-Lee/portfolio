@@ -1,16 +1,49 @@
-import NotionPage from '@/components/notion/NotionPages';
+import { Metadata } from 'next';
+import { getPageTitle } from 'notion-utils';
+import Footer from '@/components/layouts/footer/Footer';
 import { notion } from '../page';
+import NotionEachPage from './NotionEachPage';
+
+type Props = {
+  params: { pageId: string };
+};
+
+export const generateMetadata = async ({
+  params: { pageId },
+}: Props): Promise<Metadata> => {
+  const recordMap = await notion.getPage(pageId);
+  const title = getPageTitle(recordMap);
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
+};
 
 interface fetchEachPagesProps {
   params: {
     pageId: string;
+    lng: string;
   };
 }
 
-const fetchEachPages = async ({ params: { pageId } }: fetchEachPagesProps) => {
+const fetchEachPages = async ({ params: { pageId, lng } }: fetchEachPagesProps) => {
+  const rootPageId = process.env.NOTION_PAGE_ID;
+
   try {
     const recordMap = await notion.getPage(pageId);
-    return <NotionPage recordMap={recordMap} />;
+    return (
+      <>
+        <NotionEachPage
+          recordMap={recordMap}
+          isRootPage={pageId === rootPageId}
+          lng={lng}
+        />{' '}
+        <Footer lng={lng} />
+      </>
+    );
   } catch (error) {
     return console.error(error);
   }

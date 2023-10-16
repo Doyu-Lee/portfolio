@@ -30,7 +30,6 @@ export default function NotionPage({ recordMap }: NotionPageProps) {
       ssr: false,
     },
   );
-
   const Modal = dynamic(
     () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal),
     {
@@ -41,6 +40,7 @@ export default function NotionPage({ recordMap }: NotionPageProps) {
   return (
     <NotionRenderer
       recordMap={recordMap}
+      fullPage
       components={{
         Code,
         Collection,
