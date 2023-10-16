@@ -1,6 +1,13 @@
 export const homeMetaData = {
   metadataKO: {
-    metadataBase: new URL('https://portfolio-doyu.vercel.app/ko'),
+    metadataBase: new URL('https://portfolio-doyu.vercel.app'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'ko-KR': '/ko',
+        'en-US': '/en',
+      },
+    },
     title: {
       template: '🐱 %s | 도유의 블로그',
       default: '🐱 도유의 블로그',
@@ -25,7 +32,14 @@ export const homeMetaData = {
   },
 
   metadataEN: {
-    metadataBase: new URL('https://portfolio-doyu.vercel.app/en'),
+    metadataBase: new URL('https://portfolio-doyu.vercel.app'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'ko-KR': '/ko',
+        'en-US': '/en',
+      },
+    },
     title: {
       template: "🐱 %s | Doyu's Blog",
       default: "🐱 Doyu's Blog",

@@ -25,9 +25,10 @@ export const useScrollProgress = ({ mainRef }: ScrollProgressProps) => {
         barRef.current &&
         containerRef.current &&
         mainRef.current &&
-        events.includes('mousedown') &&
-        events.includes('mousemove') &&
-        events.includes('click')
+        ((events.includes('mousedown') &&
+          events.includes('mousemove') &&
+          events.includes('click')) ||
+          event.type === 'click')
       ) {
         const { scrollHeight } = barRef.current;
         const { clientY } = event;
