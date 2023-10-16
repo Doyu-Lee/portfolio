@@ -41,7 +41,7 @@ export default function Contacts({ params: { lng } }: LngParamsProps) {
               />
             ))}
           </div>
-          <div className={styles['card-box']}>
+          <div className={`${styles['card-box']} ${isMobile && styles.mobile}`}>
             {isMobile && <GuideBox text={t('mobile-guide')} lng={lng} />}
             <Card3D lng={lng} />
           </div>
