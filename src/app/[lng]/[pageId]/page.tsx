@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { redirect } from 'next/navigation';
 import { getPageTitle } from 'notion-utils';
 import { notion } from '../page';
 import NotionEachPage from './NotionEachPage';
@@ -11,6 +12,12 @@ type Props = {
 export const generateMetadata = async ({
   params: { pageId },
 }: Props): Promise<Metadata> => {
+  const REGEX = /^[0-9a-fA-F]{32}$/;
+
+  if (!REGEX.test(pageId)) {
+    redirect('/');
+  }
+
   const recordMap = await notion.getPage(pageId);
   const title = getPageTitle(recordMap);
 

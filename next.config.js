@@ -6,7 +6,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles/base')],
   },
-  experimental: { optimizeCss: true },
+  // experimental: { optimizeCss: true },
 };
 
 module.exports = nextConfig;
