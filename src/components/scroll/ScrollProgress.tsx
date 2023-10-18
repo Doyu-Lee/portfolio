@@ -6,9 +6,10 @@ import styles from './ScrollProgress.module.scss';
 
 interface ScrollProgressProps {
   mainRef: RefObject<HTMLElement>;
+  lng: string;
 }
 
-const ScrollProgress = memo(({ mainRef }: ScrollProgressProps) => {
+const ScrollProgress = memo(({ mainRef, lng }: ScrollProgressProps) => {
   const { containerRef, barRef, progressRef, handleProgressMove } = useScrollProgress({
     mainRef,
   });
@@ -22,6 +23,7 @@ const ScrollProgress = memo(({ mainRef }: ScrollProgressProps) => {
         onClick={handleProgressMove}
         onMouseMove={handleProgressMove}
         onMouseDown={handleProgressMove}
+        aria-label={lng === 'ko' ? '스크롤바' : 'scroll bar'}
       >
         <div className={styles.progress} ref={progressRef} />
       </button>
