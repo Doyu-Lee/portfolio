@@ -9,9 +9,10 @@ import { NotionRenderer } from 'react-notion-x';
 
 interface NotionPageProps {
   recordMap: ExtendedRecordMap;
+  isRootPage?: boolean;
 }
 
-export default function NotionPage({ recordMap }: NotionPageProps) {
+export default function NotionPage({ recordMap, isRootPage }: NotionPageProps) {
   const Code = dynamic(
     () => import('react-notion-x/build/third-party/code').then((m) => m.Code),
     {
@@ -40,7 +41,7 @@ export default function NotionPage({ recordMap }: NotionPageProps) {
   return (
     <NotionRenderer
       recordMap={recordMap}
-      fullPage
+      fullPage={!isRootPage}
       components={{
         Code,
         Collection,

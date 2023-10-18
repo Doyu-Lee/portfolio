@@ -15,6 +15,7 @@ export const LetterDomino = ({ text, max = 73, factor = 1.2 }: LetterDominoProps
 
   const letters = text.split('');
   const ratio = max / factor ** (letters.length - 1);
+  const setTimeouts = useRef<{ [key: number]: NodeJS.Timeout }>({});
 
   useEffect(() => {
     letters.map((letter: string, index: number) => {
@@ -42,17 +43,27 @@ export const LetterDomino = ({ text, max = 73, factor = 1.2 }: LetterDominoProps
       const currentSpan = spanRefs.current[currentIndex];
       const rotation = factor ** currentIndex * ratio;
       if (currentSpan) {
-        setTimeout(
+        const timer = setTimeout(
           () => {
             currentSpan.style.transform = `rotate(${rotation}deg)`;
           },
           2000 + currentIndex * 70,
         );
+
+        setTimeouts.current[currentIndex] = timer;
       }
       if (currentIndex < letters.length) {
         setCurrentIndex((prev) => prev + 1);
       }
+
+      if (currentIndex === letters.length) {
+        return () =>
+          Object.values(setTimeouts.current).map((timer: NodeJS.Timeout) =>
+            clearTimeout(timer),
+          );
+      }
     }
+    return () => {};
   }, [currentIndex, childSpans]);
 
   return { childSpans };

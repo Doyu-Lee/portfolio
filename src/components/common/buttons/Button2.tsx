@@ -14,6 +14,7 @@ interface Button1Props {
   toWhere?: string;
   isNewTab?: boolean;
   isBlocked?: boolean;
+  ariaLabel?: string;
 }
 
 const Button2 = ({
@@ -25,6 +26,7 @@ const Button2 = ({
   toWhere,
   isNewTab,
   isBlocked = false,
+  ariaLabel,
 }: Button1Props) => {
   const contents = getProps(title, children);
 
@@ -56,6 +58,7 @@ const Button2 = ({
       className={`${styles.button} ${lng === 'ko' && styles.en}`}
       onClick={handler}
       disabled={!isBlocked}
+      aria-label={ariaLabel}
     >
       {contents}
     </button>

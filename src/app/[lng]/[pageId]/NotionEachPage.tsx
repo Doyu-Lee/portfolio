@@ -22,9 +22,9 @@ const NotionEachPage = ({ recordMap, isRootPage, lng }: NotionEachPageProps) => 
   return (
     <main ref={mainRef} className={styles.container}>
       <LngSwitchButtonCSR lng={lng} url="/" isBlocked />
-      {!isRootPage && !isMobile && <ScrollProgress mainRef={mainRef} />}
+      {!isRootPage && !isMobile && <ScrollProgress mainRef={mainRef} lng={lng} />}
       <NotionPage recordMap={recordMap} />
-      <MoveToTopButton />
+      <MoveToTopButton lng={lng} />
     </main>
   );
 };

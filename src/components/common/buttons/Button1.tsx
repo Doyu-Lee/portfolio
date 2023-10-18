@@ -13,6 +13,7 @@ interface Button1Props {
   toWhere?: string;
   isNewTab?: boolean;
   isBlocked?: boolean;
+  ariaLabel?: string;
 }
 
 const Button1 = ({
@@ -23,6 +24,7 @@ const Button1 = ({
   toWhere,
   isNewTab,
   isBlocked,
+  ariaLabel,
 }: Button1Props) => {
   const contents = getProps(title, children);
 
@@ -54,6 +56,7 @@ const Button1 = ({
         className={styles.button}
         onClick={handler}
         disabled={!isBlocked}
+        aria-label={ariaLabel}
       >
         {contents}
       </button>
