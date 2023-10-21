@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import Intro from '@/components/common/effect/Intro';
-import LngSwitchButtonSSR from '@/components/language-button/LngSwitchButtonSSR';
 import { LngParamsProps } from '@/types/lngSwitch';
 import styles from './page.module.scss';
 
@@ -8,6 +7,12 @@ const Home = async ({ params: { lng } }: LngParamsProps) => {
   const Footer = dynamic(() => import('@/components/layouts/footer/Footer'), {
     ssr: false,
   });
+  const LngSwitchButtonSSR = dynamic(
+    () => import('@/components/language-button/LngSwitchButtonSSR'),
+    {
+      ssr: false,
+    },
+  );
 
   return (
     <div className={styles.container}>

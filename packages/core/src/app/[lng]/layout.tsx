@@ -1,4 +1,3 @@
-import '@/styles/base/globals.scss';
 import { dir } from 'i18next';
 import { Metadata } from 'next';
 import Header from '@/components/layouts/header/Header';
@@ -49,6 +48,7 @@ export default function RootLayout({ children, params: { lng } }: RootLayoutProp
       <body>
         <Header lng={lng} />
         {children}
+        <link rel="preload" href="@/styles/base/globals.scss" as="style" />
       </body>
     </html>
   );
