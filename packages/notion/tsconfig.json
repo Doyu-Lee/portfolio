@@ -1,28 +1,72 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2016",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "composite": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types"],
     "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"]
-    }
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@mono-repo/shared/*": [
+        "../shared/src/*"
+      ],
+      "@mono-repo/core/*": [
+        "../core/src/*"
+      ]
+    },
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "site.config.ts"]
+  "references": [
+    { "path": "../shared" },
+    { "path": "../core" }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "site.config.ts",
+    "./dist/**/*",
+    "src/**/*"
+  ]
 }
