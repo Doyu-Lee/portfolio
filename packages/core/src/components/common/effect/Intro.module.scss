@@ -60,14 +60,13 @@
     white-space: pre-line;
     @include relative-title-font(1, 0.95, 0.9, 0.85, 0.8);
 
-    @media screen and (max-width: 550px) {
-      width: 90%;
-    }
+    
     &:nth-child(3) {
       width: 80%;
       margin: 0.7rem 0;
 
-      @media screen and (max-width: 550px) {
+      @media screen and (max-width: 570px) {
+        width: 90%;
         white-space: normal;
       }
     }
@@ -76,6 +75,11 @@
       font-family: var(--font-chakraPatch);
       letter-spacing: 0.3px;
       @include relative-title-font(1, 0.95, 0.9, 0.85, 0.8);
+
+      @media screen and (max-width: 570px) {
+        width: 90%;
+        white-space: normal;
+      }
     }
   }
 }
