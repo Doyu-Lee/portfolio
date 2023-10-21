@@ -59,7 +59,7 @@
       font-size: 3.5rem;
       font-weight: 700;
       line-height: 3em;
-      @include long-shadow-text(500, 0, #ababab);
+      @include long-shadow-text(500, 0, #9e9d9d);
 
       @media screen and (max-width: 900px) {
         font-size: 3rem;
