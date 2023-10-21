@@ -10,6 +10,7 @@
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
+  background-color: #fafafadb;
 }
 
 .notion-frame {
@@ -38,6 +39,10 @@
   margin-bottom: 1em;
 }
 
+.notion-blank {
+  display: none;
+}
+
 .notion-asset-wrapper-video > div,
 .notion-asset-wrapper-video video {
   width: 100% !important;
@@ -53,7 +58,6 @@
 }
 
 .notion-gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   grid-gap: 6vmin;
   gap: 6vmin;
 }
@@ -65,6 +69,10 @@
 .notion-gallery-grid .notion-page-title-text {
   font-size: 2em;
   white-space: unset;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.6em;
+  }
 }
 
 .notion-gallery-grid .notion-collection-card-property {
@@ -87,6 +95,16 @@
 
 .notion-collection-card {
   overflow: visible;
+  background-color: var(--color-bg);
+
+}
+
+.notion-aside-table-of-contents {
+  background-color: var(--color-bg);
+}
+
+.notion-table-of-contents-active-item {
+  color: var(--color-primary) !important;
 }
 
 .notion-collection-card-cover {
@@ -134,17 +152,22 @@
 
 .notion-callout {
   margin: 0.75em 0;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 0.9rem;
+  }
+  @media only screen and (max-width: 479px) {
+    font-size: 0.8rem;
+  }
 }
 
 .notion-hr {
   margin: 2em 0;
 }
 
-@media only screen and (max-width: 920px) {
   .index-page.notion-page {
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
+    padding: 0 2vw;
+
 }
 
 @media only screen and (max-width: 720px) {
@@ -154,13 +177,11 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .notion-search-button {
-    display: none !important;
-  }
+.notion-search-button {
+  display: none !important;
 }
 
-.notion .notion-page-icon-cover {
+.notion  {
   margin-left: auto;
   margin-right: auto;
 }
@@ -168,6 +189,10 @@
 .notion-title {
   display: block;
   text-align: center;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 2.1em;
+  }
 }
 
 .notion-collection-row {
@@ -195,10 +220,12 @@
 .notion-page-cover-wrapper img {
   max-width: 1200px !important;
   border-radius: 24px;
+  display: none;
 }
 
 .notion-page-cover-wrapper {
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+  display: none;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -350,14 +377,18 @@
 .notion-page-icon-hero.notion-page-icon-image {
   border-radius: 50%;
   box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
-}
+  display: none;
+} 
+
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {
   border-radius: 50%;
+  display: none;
+
 }
 
 .notion-header {
-  background: hsla(0, 0%, 100%, 0.8);
+  background-color: var(--color-bg);
   backdrop-filter: saturate(180%) blur(16px);
 }
 
@@ -365,6 +396,8 @@
   background: transparent;
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(180%) blur(8px);
+  display: none;
+
 }
 
 /* Workaround for Firefox not supporting backdrop-filter yet */

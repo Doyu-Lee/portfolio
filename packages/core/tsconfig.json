@@ -1,20 +1,23 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "outDir": "./dist",
     "baseUrl": ".",
     "sourceMap": true,
+    "noEmit": false,
     "composite": true,
     "declaration": true,
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
-
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -28,10 +31,30 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@mono-repo/notion/*": ["../notion/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@mono-repo/notion/*": [
+        "../notion/src/*"
+      ]
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts",  ".eslintrc.js"],
-  "exclude": ["node_modules", ".next"]
+  "references": [
+    { "path": "../notion" },
+    { "path": "../shared" }
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "src/app/i18n/middleware.js",
+    ".next/types/**/*.ts",
+    ".eslintrc.js",
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

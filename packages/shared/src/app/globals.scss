@@ -1,0 +1,150 @@
+@import 'reset.module';
+@import 'mixins';
+
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2')
+    format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somi';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Somi.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EF_jejudoldam';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MapoFlowerIsland';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+
+  /* font-size */
+  --text-xs: 0.75rem; // 12
+  --text-s: 0.9rem; // 14
+  --text-default: 1.05rem; // 16
+  --text-m: 1.25rem; // 20
+  --text-l: 1.5rem; // 24
+  --text-xl: 2rem; // 32
+
+  --logo-laptop: 2.5rem;
+  --logo-mobile: 2rem;
+
+  --title-ko-laptop: 3.7rem;
+  --title-ko-mobile: 3rem;
+  --title-en-laptop: 3rem;
+  --title-en-mobile: 2.3rem;
+
+  /* color */
+  --color-primary: darkcyan;
+  --color-light-primary: rgb(117, 173, 173);
+  
+  --color-dark-green-bg: #3a7272;
+  --color-dark-green-bg2: #277b7b;
+  --color-light-green-bg: #ddedea;
+  --color-light-green-opacity: #f4f8f7fd;
+
+  --color-point-dark-green1: #5b8683;
+  --color-point-dark-green2: #7e9d9b;
+  --color-point-light-green: #b7eae5ad;
+  --color-point-skyblue: #bfe2f2ad;
+
+  --color-black: #000;
+  --color-gray01: #333;
+  --color-gray02: #4d4d4d;
+  --color-gray03: #666;
+  --color-gray04: #767676;
+  --color-gray05: #808080;
+  --color-gray06: #999;
+  --color-gray07: #a4a7b5;
+  --color-gray08: #b3b3b3;
+  --color-gray09: #ccc;
+  --color-gray10: #d6d6d6;
+  --color-gray11: #e6e6e6;
+  --color-gray12: #f6f6f6;
+  --color-gray13: #f8f8f8;
+  --color-white: #fff;
+
+  --color-bg: #fafafadb;
+
+  /* box-shadow */
+  --shadow-default: 0 1px 10px rgba(170, 170, 170, 25);
+
+  /* border-radius */
+  --less-rounded: 0.8rem;
+  --rounded-default: 1rem;
+  --rounded-full: 999rem;
+
+  /* korean font */
+  --font-ko-header: 'ChosunGu';
+  --font-ko-wooju: 'HakgyoansimWoojuR';
+  
+  //style
+  --font-jejudoldam: 'EF_jejudoldam';
+  --font-ko-somi: 'Somi';
+  --font-mapo-flower: 'MapoFlowerIsland';
+
+  .blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1vw; 
+  }
+  
+  ::-webkit-scrollbar-thumb {  
+    border-radius: 30px;
+    background: linear-gradient(195deg, var(--color-primary), #EFF1F8);
+  }
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: var(--font-robotoSlab);
+  scroll-behavior: smooth;
+  font-smooth: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+  overflow: scroll;
+  color: var(--color-gray01);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

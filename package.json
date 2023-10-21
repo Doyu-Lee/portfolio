@@ -1,16 +1,22 @@
 {
-  "name": "pnpm-mono-repo",
+  "name": "mono-repo",
   "version": "1.0.0",
   "description": "",
-  "packageManager": "pnpm@8.6.2", 
+  "packageManager": "pnpm@8.6.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "shared": "pnpm -F @mono-repo/shared",
     "core": "pnpm -F @mono-repo/core",
     "notion": "pnpm -F @mono-repo/notion",
-    "dev": "pnpm -r dev"
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^10.0.1",
+    "react-icons": "^4.11.0"
+  }
 }

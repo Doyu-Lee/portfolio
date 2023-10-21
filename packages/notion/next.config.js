@@ -1,9 +1,10 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withTM = require('next-transpile-modules')(["../shared"], ["../core"]);
+const path = require('path');
 
-module.exports = withBundleAnalyzer({
+const nextConfig = {
   staticPageGenerationTimeout: 300,
   images: {
     domains: [
@@ -18,5 +19,20 @@ module.exports = withBundleAnalyzer({
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+  },
+  i18n: {
+    locales: ['en', 'ko'],
+    defaultLocale: 'ko',
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, '../core/src/styles/base')],
   }
-})
+};
+
+module.exports = withPlugins([
+  [withBundleAnalyzer, {
+  enabled: process.env.ANALYZE === 'true',
+}], 
+  [withTM]
+ ] , nextConfig)
+

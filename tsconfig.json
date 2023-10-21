@@ -1,37 +1,17 @@
 {
-  "compilerOptions": {
-    "rootDir": ".",
-
-    "incremental": true,
-    "moduleResolution": "Node",
-    "module": "CommonJS",
-    "target": "ES2018",
-    "allowSyntheticDefaultImports": true,
-    "lib": [
-      "esnext"
-    ],
-    "esModuleInterop": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "resolveJsonModule": true,
-  },
-  "baseUrl": ".", 
-  "paths": {
-    "core": ["core"],
-    "notion": ["notion"],
-  },
+  "extends": "./tsconfig.options.json",
+  "files": [],
   "references": [
     {
       "path": "packages/core"
     },
     {
       "path": "packages/notion"
+    },
+    {
+      "path": "packages/shared"
     }
   ],
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "*.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", ".eslintrc.js"],
+  "exclude": ["node_modules", "dist"]
 }
