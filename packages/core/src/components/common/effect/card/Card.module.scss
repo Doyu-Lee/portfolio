@@ -97,7 +97,7 @@
       width: 80px;
       height: 80px;
       transform: translate3d(25px, 50px, 50px);
-      background: url(/images/card/heart.png) center bottom / 60px no-repeat;
+      background: url(/images/card/heart.webp) center bottom / 60px no-repeat;
 
       @media screen and (max-width: 479px) {
         transform: translate3d(5px, 90px, 50px);
@@ -111,7 +111,7 @@
       width: 90%;
       height: 200px;
       transform: translate3d(-8px, 0, 26px);
-      background: url(/images/card/ground1.png) right bottom / 55% no-repeat;
+      background: url(/images/card/ground1.webp) right bottom / 55% no-repeat;
     }
 
     .ground2 {
@@ -121,7 +121,7 @@
       width: 90%;
       height: 200px;
       transform: translate3d(-10px, 0, 45px);
-      background: url(/images/card/ground2.png) right bottom / 100% no-repeat;
+      background: url(/images/card/ground2.webp) right bottom / 100% no-repeat;
     }
 
     .ground3 {
@@ -131,7 +131,7 @@
       width: 90%;
       height: 200px;
       transform: translate3d(-20px, 0, 70px);
-      background: url(/images/card/ground3.png) right bottom / 75% no-repeat;
+      background: url(/images/card/ground3.webp) right bottom / 75% no-repeat;
     }
 
     .big-pine {
@@ -157,7 +157,7 @@
       width: 90px;
       height: 90px;
       transform: translate3d(45px, -5px, 100px);
-      background: url(/images/card/pine.gif) center center / 100% no-repeat;
+      background: url(/images/card/pine.webp) center center / 100% no-repeat;
     }
 
     .mango {
@@ -167,7 +167,7 @@
       width: 130px;
       height: 130px;
       transform: translate3d(160px, 40px, 130px);
-      background: url(/images/card/망고.png) center center / 100% no-repeat;
+      background: url(/images/card/망고.webp) center center / 100% no-repeat;
 
       @media screen and (max-width: 479px) {
         transform: translate3d(90px, 40px, 130px);
