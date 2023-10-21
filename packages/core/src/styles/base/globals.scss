@@ -1,5 +1,4 @@
 @import 'reset.module';
-@import 'mixins';
 
 @font-face {
   font-family: 'HakgyoansimWoojuR';
@@ -84,9 +83,6 @@
 
   --color-bg: #fafafadb;
 
-  /* box-shadow */
-  --shadow-default: 0 1px 10px rgba(170, 170, 170, 25);
-
   /* border-radius */
   --less-rounded: 0.8rem;
   --rounded-default: 1rem;
@@ -132,7 +128,6 @@ html {
   max-width: 100vw;
   min-height: 100vh;
   background-color: var(--color-bg);
-  font-family: var(--font-robotoSlab);
   scroll-behavior: smooth;
   font-smooth: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -143,8 +138,6 @@ body {
   margin-top: 80px;
   overflow: scroll;
   color: var(--color-gray01);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
