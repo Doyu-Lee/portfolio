@@ -1,9 +1,7 @@
 import dynamic from 'next/dynamic';
 import { NotionAPI } from 'notion-client';
 import Intro from '@/components/common/effect/Intro';
-import Loading from '@/components/common/loading/Loading';
 import LngSwitchButtonSSR from '@/components/language-button/LngSwitchButtonSSR';
-import NotionPage from '@/components/notion/NotionPages';
 import { LngParamsProps } from '@/types/lngSwitch';
 import styles from './page.module.scss';
 
@@ -16,24 +14,22 @@ const Home = async ({ params: { lng } }: LngParamsProps) => {
     ssr: false,
   });
 
-  if (process.env.NOTION_PAGE_ID) {
-    try {
-      const recordMap = await notion.getPage(process.env.NOTION_PAGE_ID);
-
-      return (
-        <div className={styles.container}>
-          <div className={styles.wrapper}>
-            <LngSwitchButtonSSR lng={lng} url="/" />
-            <Intro lng={lng} />
-            <NotionPage recordMap={recordMap} isRootPage />
-          </div>
-          <Footer lng={lng} />
+  return (
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <LngSwitchButtonSSR lng={lng} url="/" />
+        <Intro lng={lng} />
+        <div className={styles['iframe-container']}>
+          <iframe
+            allow="microphone;"
+            title="chatbot"
+            src="https://console.dialogflow.com/api-client/demo/embedded/918b3a83-ebd8-410f-8155-dff0bf42e5d2"
+          />
         </div>
-      );
-    } catch (error) {
-      return error;
-    }
-  } else return <Loading />;
+      </div>
+      <Footer lng={lng} />
+    </div>
+  );
 };
 
 export default Home;
