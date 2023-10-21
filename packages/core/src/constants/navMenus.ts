@@ -1,1 +1,1 @@
-export const navMenus = ['contacts'];
+export const navMenus = ['projects', 'contacts'];
