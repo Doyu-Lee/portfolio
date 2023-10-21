@@ -1,13 +1,8 @@
 import dynamic from 'next/dynamic';
-import { NotionAPI } from 'notion-client';
 import Intro from '@/components/common/effect/Intro';
 import LngSwitchButtonSSR from '@/components/language-button/LngSwitchButtonSSR';
 import { LngParamsProps } from '@/types/lngSwitch';
 import styles from './page.module.scss';
-
-export const notion = new NotionAPI({
-  authToken: process.env.NOTION_TOKEN_V2,
-});
 
 const Home = async ({ params: { lng } }: LngParamsProps) => {
   const Footer = dynamic(() => import('@/components/layouts/footer/Footer'), {
