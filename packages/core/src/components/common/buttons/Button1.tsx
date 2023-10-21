@@ -55,7 +55,7 @@ const Button1 = ({
         type="button"
         className={styles.button}
         onClick={handler}
-        disabled={!isBlocked}
+        disabled={isBlocked}
         aria-label={ariaLabel}
       >
         {contents}

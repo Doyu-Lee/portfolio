@@ -41,7 +41,9 @@ const Button2 = ({
       <div className={styles['button-box']}>
         <Link
           href={toWhere}
-          className={`${styles.button} ${isBlocked && styles.block}`}
+          className={`${styles.button} ${isBlocked && styles.block} ${
+            lng === 'ko' && styles.en
+          }`}
           target={isNewTab ? '_blank' : undefined}
           rel={isNewTab ? 'noopener' : undefined}
           onClick={handleBlockedLink}
@@ -57,7 +59,7 @@ const Button2 = ({
       type="button"
       className={`${styles.button} ${lng === 'ko' && styles.en}`}
       onClick={handler}
-      disabled={!isBlocked}
+      disabled={isBlocked}
       aria-label={ariaLabel}
     >
       {contents}

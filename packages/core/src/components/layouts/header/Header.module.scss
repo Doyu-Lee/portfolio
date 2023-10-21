@@ -43,15 +43,18 @@
 .menu-box {
   margin-right: 8rem;
   font-size: var(--text-l);
+  @include relative-title-font(1.4, 1.2, 1, 0.8, 0.8);
 
   @media screen and (max-width: 767px) {
     margin-right: 5rem;
-    font-size: var(--text-m);
   }
-  @media screen and (max-width: 479px) {
-    font-size: var(--text-s);
+
+  &.ko{
+    @include relative-title-font(1.6, 1.5, 1.4, 1.2, 1);
+    letter-spacing: 1px;
+    font-family: var(--font-ko-wooju);
   }
-  
+
   .menu {
     display: inline-block;
     position: relative;
@@ -64,10 +67,6 @@
 
     @include highlight;
   }
-}
-
-.ko {
-  letter-spacing: 1px;
 }
 
 .loading {
