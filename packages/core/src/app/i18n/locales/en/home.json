@@ -2,5 +2,6 @@
   "title": "SEONA LEE",
   "introduction1": "A frontend developer who constantly strives and innovates\n to deliver <0>a better user experience.</0>",
   "introduction2": "My enthusiasm lies in <0>user accessibility</0>,\n swiftly assimilating <1>cutting-edge technologies</1>\n and consistently embracing <1>diverse learning opportunities.</1>",
-  "guide": " 🐱 Below are topics\n that have been collected and curated.\n <0>(Only Korean services are supported.)</0>"
+  "guide": "🐱 Below is a chatbot that answers questions\n  related to <3>front-end development</3>.\n <5>View Description</5>",
+"hidedGuide": " <1>Please ask questions in the format of 'keyword + ?'</1>\n(Example - ㅇㅇㅇ?)\n <3>Recommended Queries</3>: <0>'Hello', 'Closure?'</0>\n* A maximum of 100 conversations per day is allowed."
 }
