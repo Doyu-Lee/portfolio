@@ -1,5 +1,4 @@
 import '@/styles/base/globals.scss';
-import 'react-notion-x/src/styles.css';
 import { dir } from 'i18next';
 import { Metadata } from 'next';
 import Header from '@/components/layouts/header/Header';
@@ -7,8 +6,6 @@ import { homeMetaData } from '@/constants/SEO/home';
 import { LngParamsProps } from '@/types/lngSwitch';
 import {
   IBMPlexMono,
-  lobster,
-  mansalva,
   megrim,
   permanentMarker,
   solway,
