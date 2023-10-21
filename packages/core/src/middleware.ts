@@ -14,7 +14,6 @@ export function middleware(req: NextRequest) {
   if (!supportedLocales.some((locale) => req.nextUrl.pathname.includes(locale))) {
     const locale = req.cookies.get('i18next')?.value || 'ko';
 
-    // eslint-disable-next-line consistent-return
     return NextResponse.redirect(
       new URL(`/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`, req.url),
     );

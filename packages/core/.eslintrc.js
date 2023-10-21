@@ -44,6 +44,7 @@ module.exports = {
     'plugin:import/recommended',
   ],
   rules: {
+    'consistent-return': 'off',
     'react/function-component-definition': [
       2,
       { namedComponents: ['arrow-function', 'function-declaration'] },
