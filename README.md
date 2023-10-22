@@ -1,5 +1,5 @@
 
-# DOYU's Blog v1.1.0
+# DOYU's Blog v1.2.0
 
 <br />
 
@@ -8,12 +8,12 @@
 <br />
 
 
-[한국어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/ko) | 
-[영어 페이지 링크](https://portfolio-doyu-git-notion-doyu-lee.vercel.app/en)
+[한국어 페이지 링크](https://portfolio-doyu.vercel.app/ko) | 
+[영어 페이지 링크](https://portfolio-doyu.vercel.app/en)
 
  -> 둘 중 한 링크로 들어가셔서 오른쪽 상단의 언어 버튼을 누르셔도 한/영 전환이 됩니다.
 
-![v1.1](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/da8cf387-a5ec-4618-aefa-30860088425f)
+![v1.2](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/da8cf387-a5ec-4618-aefa-30860088425f)
 
 <details>
   <summary> 히스토리 </summary>
@@ -22,6 +22,9 @@
 
 **[v1.0]**
 ![블로그v1.0](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
+
+**[v1.1]**
+![블로그v1.0](https://user-images.githubusercontent.com/125176463/275493004-da8cf387-a5ec-4618-aefa-30860088425f.gif)
 
 </details>
 
