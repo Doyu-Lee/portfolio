@@ -9,9 +9,6 @@ const Home = async ({ params: { lng } }: LngParamsProps) => {
   });
   const LngSwitchButtonSSR = dynamic(
     () => import('@/components/language-button/LngSwitchButtonSSR'),
-    {
-      ssr: false,
-    },
   );
 
   return (
