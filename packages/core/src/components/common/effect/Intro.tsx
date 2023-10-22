@@ -18,6 +18,7 @@ export default function Intro({ lng }: LngProps) {
 
   return (
     <div className={styles.wrap}>
+      <h1 className="blind">{t('title')}</h1>
       <div className={styles.content}>
         <div className={styles.align}>
           <div className={`${styles.drift} ${lng === 'en' ? styles.en1 : ''}`}>

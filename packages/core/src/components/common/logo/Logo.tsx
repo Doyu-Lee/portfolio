@@ -14,7 +14,6 @@ const Logo = ({ lng }: { lng: string }) => {
       aria-label="DOYU"
       href={`/${lng}`}
     >
-      <h1 className="blind">DOYU</h1>
       <div aria-hidden className={`box ${styles.word}`}>
         D
       </div>

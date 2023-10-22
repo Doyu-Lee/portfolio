@@ -20,10 +20,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
-  i18n: {
-    locales: ['en', 'ko'],
-    defaultLocale: 'ko',
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, '../core/src/styles/base')],
   }

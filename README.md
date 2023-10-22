@@ -60,18 +60,32 @@
 <br>
 
 
+## 폴더 구조 
+
+```javascript
+packages
+|--- core // (블로그 코드) 
+|    |--- src
+|    |    |--- app // (페이지)
+|    |     ... 
+|    |--- public
+|    |    ... 
+|--- notion // (nextjs-notion 라이브러리 코드)
+|    |--- pages (페이지)
+|    |--- site.config.js // 노션 연동 설정
+|--- shared // (css, 컴포넌트 등 공유 코드)
+|    |--- src
+```
+
 
 ## ⌨️ 로컬 실행 방법
 
-### 1. 환경 변수 설정 
+### 1. 노션 연동 설정 
 
-해당 레포지토리를 clone하셔서 여신 후, 노션 API와 관련하여 아래 링크를 참고하셔서 환경변수를 설정하시면 됩니다.
-- [공식 문서 : Notion API](https://developers.notion.com/docs/create-a-notion-integration)
+해당 레포지토리를 clone하셔서 여신 후, 위 폴더 구조 챕터 속 `site.config.js` 파일에서 아래 링크를 참고하셔서 노션 연동을 해주시면 됩니다.
+- [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit)
 
-```
-NOTION_PAGE_ID={노션 페이지 아이디}
-NOTION_TOKEN_V2={노션 토큰 값}
-```
+
 
 ### 2. 패키지매니저로 로컬 설치 및 개발모드로 실행
 
@@ -116,6 +130,31 @@ pnpm dev
   - 클릭 후 드래그하여 동시에 페이지 실시간 이동
 - **기타**
   - 공통 버튼 컴포넌트에 disabled 속성 추가 
+
+<br />
+
+### v1.2
+- **성능 최적화**
+  - 그전 버전 성능 저하의 원인이었던 노션 라이브러리 교체
+  - 메모리 누수 개선
+    - `setTimeout` 등 코드 정리로 메모리 누수 최소화
+  - FCP, LCP 개선
+    - `useLayoutEffect` 적용으로 글자 애니메이션 최적화
+    - `font-display: swap;`으로 대체 글자 적용  
+  - 페이로드 최적화 
+    - 대용량 폰트 제거
+    - png, gif -> webp 파일로 전환
+- **챗봇 기능 추가**
+  - 구글의 'Dialogflow' 서비스를 활용하여 개발 관련 문답을 할 수 있는 챗봇 페이지를 삽입
+  - 한/영 언어별(동적) 정적 메타 태그 생성
+- **모노레포 구축**
+  - core, notion, shared로 패키지 구성 
+    - shared (core & notion의 공용 패키지)
+    - core (기존 블로그 코드가 들어있는 곳)
+    - notion (next-starter-kit의 커스텀 노션 코드가 들어있는 곳)
+  - shared 패키지의 Footer 컴포넌트를 notion 패키지로 import해와서 적용
+- **웹접근성**
+  - `aria-label`, 배경 대비 글자 색 등 웹 접근성 개선
 
 
 <br />
@@ -289,8 +328,6 @@ const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticl
 ![블로그](https://github.com/Doyu-Lee/portfolio_doyu/assets/125176463/d3e87e59-4052-4498-827f-a3f48e8eab46)
 
 </details>
-
-<br>
 
 
 <details>
