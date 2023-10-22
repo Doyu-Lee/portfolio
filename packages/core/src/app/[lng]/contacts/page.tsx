@@ -31,7 +31,7 @@ const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
     <main className={styles.container}>
       <LngSwitchButtonCSR lng={lng} url={url} />
       <article className={styles.wrapper}>
-        <PageTitleWithTyping title={t('title')} lng={lng} />
+        <PageTitleWithTyping lng={lng} />
         <div className={styles['contents-box']}>
           <div className={styles['info-box']}>
             {contactInfos.map((info) => (

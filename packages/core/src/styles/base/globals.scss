@@ -10,14 +10,6 @@
 }
 
 @font-face {
-  font-family: 'Somi';
-  font-style: normal;
-  font-weight: normal;
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_10@1.0/Somi.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'EF_jejudoldam';
   font-style: normal;
   font-weight: normal;
@@ -94,7 +86,6 @@
   
   //style
   --font-jejudoldam: 'EF_jejudoldam';
-  --font-ko-somi: 'Somi';
   --font-mapo-flower: 'MapoFlowerIsland';
 
   .blind {
