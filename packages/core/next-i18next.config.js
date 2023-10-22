@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-unresolved */
-const ChainedBackend = require('i18next-chained-backend').default;
-const LocalStorageBackend = require('i18next-localstorage-backend').default;
+const ChainedBackend = require('i18next-chained-backend');
+const LocalStorageBackend = require('i18next-localstorage-backend');
 const LocizeBackend = require('i18next-locize-backend/cjs');
 
 const isBrowser = typeof window !== 'undefined';
