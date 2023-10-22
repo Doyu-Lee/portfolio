@@ -9,14 +9,12 @@ import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR'
 import { contactInfos } from '@/constants/contactInfos';
 import { LngParamsProps } from '@/types/lngSwitch';
 import { getPathFromURL } from '@/utils/common/getPathFromURL';
-import { useAfterSeconds } from '@/hooks/useAfterSeconds';
 import { useCheckMobile } from '@/hooks/useCheckMobile';
 import styles from './page.module.scss';
 
 const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
   const { t } = useTranslation(lng, 'contacts');
   const url = getPathFromURL(usePathname());
-  const { isLoading, LoadingComponent } = useAfterSeconds(1200);
   const isMobile = useCheckMobile();
 
   const GuideBox = dynamic(() => import('@/components/common/Guide'), {
@@ -32,7 +30,6 @@ const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
   return (
     <main className={styles.container}>
       <LngSwitchButtonCSR lng={lng} url={url} />
-      {isLoading && LoadingComponent}
       <article className={styles.wrapper}>
         <PageTitleWithTyping title={t('title')} lng={lng} />
         <div className={styles['contents-box']}>
