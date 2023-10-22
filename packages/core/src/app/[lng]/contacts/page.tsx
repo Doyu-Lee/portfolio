@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import { PageTitleWithTyping } from '@/components/common/titles/PageTitle';
-import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR';
 import { contactInfos } from '@/constants/contactInfos';
 import { LngParamsProps } from '@/types/lngSwitch';
 import { getPathFromURL } from '@/utils/common/getPathFromURL';
@@ -26,6 +25,9 @@ const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
   const Card3D = dynamic(() => import('@/components/common/effect/card/Card'), {
     ssr: false,
   });
+  const LngSwitchButtonCSR = dynamic(
+    () => import('@/components/language-button/LngSwitchButtonCSR'),
+  );
 
   return (
     <main className={styles.container}>
