@@ -1,0 +1,32 @@
+@import 'mixins';
+
+// -s : span으로 들어가는 단어 강조 스타일
+.points {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.weights {
+  font-weight: 600;
+}
+
+.highlights {
+  @include highlight-everytime(#e7f5ecc5);
+}
+
+.italics {
+  margin-right: 0.2rem;
+  color: var(--color-gray04);
+  font-style: italic;
+}
+
+.margins {
+  width: 100%;
+  margin: 7px 0;
+}
+
+
+.toggles {
+  margin-top: 7px;
+  line-height: 1.5rem;
+}

@@ -1,0 +1,62 @@
+@import 'mixins';
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+
+  .wrapper {
+    @include center-center(column);
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 900px) {
+      @include center-center(column);
+      width: 100vw;
+    }
+  }
+  
+  .contents-box {
+    display: flex;
+    @include center-center(row);
+    width: 800px;
+
+    @media screen and (max-width: 900px) {
+      @include center-center(column);
+      width: 90%;
+      height: 100%;
+    }
+
+    .info-box {
+      @include center-center(column);
+
+      @media screen and (max-width: 900px) {
+        @include center-center(row);
+        flex-wrap: wrap;
+        width: 90%;
+      }
+      @media screen and (max-width: 767px) {
+        @include center-center(column);
+        width: 100%;
+      }
+    }
+    
+    .card-box {
+      position: relative;
+      width: 100%;
+      height: 370px;
+
+      &.mobile {
+        height: 440px;
+
+        @media screen and (min-width: 901px) {
+          height: 560px;
+
+          div {
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  } 
+}
