@@ -105,6 +105,7 @@
 
 .notion-table-of-contents-active-item {
   color: var(--color-primary) !important;
+  font-weight: 800;
 }
 
 .notion-collection-card-cover {
@@ -417,5 +418,38 @@
 }
 
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
+  display: none;
+}
+
+notion-list-disc {
+  position: relative;
+}
+
+.notion-list li:before {
+  content: '∘  ';
+}
+
+.notion-toggle {
+  cursor: pointer;
+}
+
+.notion-toggle > summary:before {
+  content: '➝  ';
+}
+
+.notion-toggle[open] > summary:before {
+  content: '⇣  ';
+}
+
+.notion-property-status {
+  font-style: italic;
+}
+
+.notion-property-select-item {
+  border: 1px solid rgb(148, 195, 192);
+  border-radius: 10px;
+}
+
+.notion-aside-table-of-contents-header {
   display: none;
 }
