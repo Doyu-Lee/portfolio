@@ -2,38 +2,35 @@
 
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
+import Card3D from '@/components/common/effect/card/Card';
 import { PageTitleWithTyping } from '@/components/common/titles/PageTitle';
-import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR';
+import ContactArticle from '@/components/contacts/ContactArticle';
 import { contactInfos } from '@/constants/contactInfos';
 import { LngParamsProps } from '@/types/lngSwitch';
 import { getPathFromURL } from '@/utils/common/getPathFromURL';
-import { useAfterSeconds } from '@/hooks/useAfterSeconds';
 import { useCheckMobile } from '@/hooks/useCheckMobile';
 import styles from './page.module.scss';
 
-export default function Contacts({ params: { lng } }: LngParamsProps) {
+const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
   const { t } = useTranslation(lng, 'contacts');
   const url = getPathFromURL(usePathname());
-  const { isLoading, LoadingComponent } = useAfterSeconds(1200);
   const isMobile = useCheckMobile();
 
   const GuideBox = dynamic(() => import('@/components/common/Guide'), {
     ssr: false,
   });
-  const ContactArticle = dynamic(() => import('@/components/contacts/ContactArticle'), {
-    ssr: false,
-  });
-  const Card3D = dynamic(() => import('@/components/common/effect/card/Card'), {
-    ssr: false,
-  });
+  const LngSwitchButtonCSR = dynamic(
+    () => import('@/components/language-button/LngSwitchButtonCSR'),
+  );
 
   return (
     <main className={styles.container}>
+      <h2 className="blind">{t('title')}</h2>
       <LngSwitchButtonCSR lng={lng} url={url} />
-      {isLoading && LoadingComponent}
       <article className={styles.wrapper}>
-        <PageTitleWithTyping title={t('title')} lng={lng} />
+        <PageTitleWithTyping lng={lng} />
         <div className={styles['contents-box']}>
           <div className={styles['info-box']}>
             {contactInfos.map((info) => (
@@ -53,4 +50,6 @@ export default function Contacts({ params: { lng } }: LngParamsProps) {
       </article>
     </main>
   );
-}
+});
+
+export default Contacts;

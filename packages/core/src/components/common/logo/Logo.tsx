@@ -11,7 +11,7 @@ const Logo = ({ lng }: { lng: string }) => {
     <Link
       className={styles['header-logo']}
       ref={rootRef}
-      data-text="홈 로고"
+      aria-label="DOYU"
       href={`/${lng}`}
     >
       <h1 className="blind">DOYU</h1>

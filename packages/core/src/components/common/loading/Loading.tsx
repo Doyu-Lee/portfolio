@@ -4,7 +4,7 @@ interface LoadingProps {
   imagePaths?: string;
 }
 export default function Loading({
-  imagePaths = '/images/loading/Mango.jpeg',
+  imagePaths = '/images/loading/Mango.webp',
 }: LoadingProps) {
   return (
     <div className={styles.box}>

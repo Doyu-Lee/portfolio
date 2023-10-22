@@ -1,14 +1,12 @@
 import '@/styles/base/globals.scss';
-import 'react-notion-x/src/styles.css';
 import { dir } from 'i18next';
 import { Metadata } from 'next';
+import React from 'react';
 import Header from '@/components/layouts/header/Header';
 import { homeMetaData } from '@/constants/SEO/home';
 import { LngParamsProps } from '@/types/lngSwitch';
 import {
   IBMPlexMono,
-  lobster,
-  mansalva,
   megrim,
   permanentMarker,
   solway,
@@ -36,11 +34,9 @@ interface RootLayoutProps extends LngParamsProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children, params: { lng } }: RootLayoutProps) {
+const RootLayout = React.memo(({ children, params: { lng } }: RootLayoutProps) => {
   const fontVariables = `
-  ${mansalva.variable} 
   ${megrim.variable} 
-  ${lobster.variable} 
   ${permanentMarker.variable} 
   ${solway.variable} 
   ${balooBhaina.variable} 
@@ -57,4 +53,6 @@ export default function RootLayout({ children, params: { lng } }: RootLayoutProp
       </body>
     </html>
   );
-}
+});
+
+export default RootLayout;

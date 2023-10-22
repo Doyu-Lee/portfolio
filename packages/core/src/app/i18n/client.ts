@@ -29,7 +29,7 @@ i18next
     preload: runsOnServerSide ? languages : [],
   });
 
-export function useTranslation(lng: string, ns: string, options = { keyPrefix: '' }) {
+export const useTranslation = (lng: string, ns: string, options = { keyPrefix: '' }) => {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
@@ -55,4 +55,4 @@ export function useTranslation(lng: string, ns: string, options = { keyPrefix: '
     }, [lng, cookies.i18next]);
   }
   return ret;
-}
+};

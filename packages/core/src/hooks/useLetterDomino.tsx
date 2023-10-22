@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface LetterDominoProps {
   text: string;
@@ -17,7 +17,7 @@ export const LetterDomino = ({ text, max = 73, factor = 1.2 }: LetterDominoProps
   const ratio = max / factor ** (letters.length - 1);
   const setTimeouts = useRef<{ [key: number]: NodeJS.Timeout }>({});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     letters.map((letter: string, index: number) => {
       const newSpan = (
         <span

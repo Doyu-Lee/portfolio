@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import Logo from '@/components/common/logo/Logo';
 import { navMenus } from '@/constants/navMenus';
 import styles from './Header.module.scss';
 
-const Header = ({ lng }: { lng: string }) => {
+const Header = React.memo(({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'header');
 
   return (
@@ -31,6 +32,6 @@ const Header = ({ lng }: { lng: string }) => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

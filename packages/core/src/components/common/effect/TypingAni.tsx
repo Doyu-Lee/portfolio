@@ -5,7 +5,7 @@ import { useAfterSeconds } from '@/hooks/useAfterSeconds';
 import styles from './TypingAni.module.scss';
 
 export default function TypingAni({ lng }: LngProps) {
-  const { t } = useTranslation(lng, 'contacts');
+  const { t } = useTranslation(lng, 'typing');
   const { isMounting } = useAfterSeconds(2000);
 
   const [text] = useTypewriter({
