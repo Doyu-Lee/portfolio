@@ -29,6 +29,7 @@ const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
 
   return (
     <main className={styles.container}>
+      <h2 className="blind">{t('title')}</h2>
       <LngSwitchButtonCSR lng={lng} url={url} />
       <article className={styles.wrapper}>
         <PageTitleWithTyping lng={lng} />
