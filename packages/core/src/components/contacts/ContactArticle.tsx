@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import React from 'react';
 import styles from './ContactArticle.module.scss';
 
 interface Modal1Props {
@@ -9,7 +10,7 @@ interface Modal1Props {
   url?: string;
 }
 
-const ContactArticle = ({ title, subtitle, url }: Modal1Props) => {
+const ContactArticle = React.memo(({ title, subtitle, url }: Modal1Props) => {
   return (
     <section className={styles.container}>
       {url ? (
@@ -30,6 +31,6 @@ const ContactArticle = ({ title, subtitle, url }: Modal1Props) => {
       )}
     </section>
   );
-};
+});
 
 export default ContactArticle;

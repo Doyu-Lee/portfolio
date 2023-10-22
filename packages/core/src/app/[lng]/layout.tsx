@@ -1,5 +1,7 @@
+import '@/styles/base/globals.scss';
 import { dir } from 'i18next';
 import { Metadata } from 'next';
+import React from 'react';
 import Header from '@/components/layouts/header/Header';
 import { homeMetaData } from '@/constants/SEO/home';
 import { LngParamsProps } from '@/types/lngSwitch';
@@ -32,7 +34,7 @@ interface RootLayoutProps extends LngParamsProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children, params: { lng } }: RootLayoutProps) {
+const RootLayout = React.memo(({ children, params: { lng } }: RootLayoutProps) => {
   const fontVariables = `
   ${megrim.variable} 
   ${permanentMarker.variable} 
@@ -48,8 +50,9 @@ export default function RootLayout({ children, params: { lng } }: RootLayoutProp
       <body>
         <Header lng={lng} />
         {children}
-        <link rel="preload" href="@/styles/base/globals.scss" as="style" />
       </body>
     </html>
   );
-}
+});
+
+export default RootLayout;

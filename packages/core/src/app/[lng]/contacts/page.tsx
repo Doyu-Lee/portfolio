@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import { PageTitleWithTyping } from '@/components/common/titles/PageTitle';
 import LngSwitchButtonCSR from '@/components/language-button/LngSwitchButtonCSR';
@@ -12,7 +13,7 @@ import { useAfterSeconds } from '@/hooks/useAfterSeconds';
 import { useCheckMobile } from '@/hooks/useCheckMobile';
 import styles from './page.module.scss';
 
-export default function Contacts({ params: { lng } }: LngParamsProps) {
+const Contacts = React.memo(({ params: { lng } }: LngParamsProps) => {
   const { t } = useTranslation(lng, 'contacts');
   const url = getPathFromURL(usePathname());
   const { isLoading, LoadingComponent } = useAfterSeconds(1200);
@@ -53,4 +54,6 @@ export default function Contacts({ params: { lng } }: LngParamsProps) {
       </article>
     </main>
   );
-}
+});
+
+export default Contacts;
