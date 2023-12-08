@@ -96,7 +96,6 @@
 .notion-collection-card {
   overflow: visible;
   background-color: var(--color-bg);
-
 }
 
 .notion-aside-table-of-contents {
@@ -166,9 +165,8 @@
   margin: 2em 0;
 }
 
-  .index-page.notion-page {
-    padding: 0 2vw;
-
+.index-page.notion-page {
+  padding: 0 2vw;
 }
 
 @media only screen and (max-width: 720px) {
@@ -182,7 +180,7 @@
   display: none !important;
 }
 
-.notion  {
+.notion {
   margin-left: auto;
   margin-right: auto;
 }
@@ -379,13 +377,12 @@
   border-radius: 50%;
   box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
   display: none;
-} 
+}
 
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {
   border-radius: 50%;
   display: none;
-
 }
 
 .notion-header {
@@ -398,7 +395,6 @@
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(180%) blur(8px);
   display: none;
-
 }
 
 /* Workaround for Firefox not supporting backdrop-filter yet */
@@ -446,7 +442,6 @@ notion-list-disc {
 }
 
 .notion-property-select-item {
-  border: 1px solid rgb(148, 195, 192);
   border-radius: 10px;
 }
 
